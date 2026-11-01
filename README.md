@@ -2,15 +2,46 @@
 
 WholeCell-python is an independent, source-faithful Python implementation of the Karr et al. (2012) *Mycoplasma genitalium* whole-cell model. It represents the original 28 processes and 16 state categories and runs without MATLAB using supplied fitted model data. Complete Python cell cycles have been compared with licensed MATLAB reference simulations. Noonautics Labs maintains the Python port; Karr and colleagues created the original biological model.
 
-![Full-cycle comparison of the fixed MATLAB and Python ensembles](docs/figures/01_full_cycle_overview.png)
+![Animated comparison of 12 MATLAB and 12 Python cells through growth and division](docs/figures/whole_cell_comparison.gif)
+
+*Independent simulations from the same initial biological state. Cell geometry and DNA placement are schematic; completed cells freeze at division.* [Watch the MP4](docs/figures/whole_cell_comparison.mp4)
 
 ## Results
+
+![Full-cycle comparison of the fixed MATLAB and Python ensembles](docs/figures/01_full_cycle_overview.png)
+
+*Growth, cellular composition and replication across the completed ensembles.*
 
 The fixed cohort comprises 12 MATLAB and 12 Python cells, seeds 101–112, starting from the same MATLAB biological state at t=60 seconds with independent random streams. All 24 divided. The Python cells used one corrected source version throughout, without checkpoint splices or code changes. Whole cells are the statistical replicates; matching seed labels do not pair trajectories.
 
 Mean division time was 8.032 h in MATLAB and 7.968 h in Python: a difference of −3.80 minutes (95% whole-cell bootstrap interval −21.34 to +13.43 minutes). Across the common t=120–26,700 s window, Python relative means differed by +0.53% for dry mass, +1.19% for growth, +0.10% for RNA, +0.57% for protein monomers, −0.09% for protein complexes and +0.45% for DNA replication. Division endpoint mass differed by −0.12% (95% interval −0.65% to +0.39%).
 
 The best of six previously selected classifier/feature combinations identified 14 of 24 cells, with multiplicity-adjusted permutation p≈0.71; the common-window averages plus division time nearest-centroid rule identified 12 of 24. These tested rules detected no reliable separation. The comparison does not establish universal indistinguishability or equivalence, and is conditional on one starting state and the measured observables. The four additional completed Python cells were excluded by the original cohort designation. [Data, provenance and results](validation/fixed-cohort/README.md) · [Validation design](docs/validation.md)
+
+![Simulator identification accuracy and uncertainty in mean differences](docs/figures/11_simulator_discrimination.png)
+
+*Simulator identification and mean-difference uncertainty, treating each whole cell as an independent replicate.*
+
+## Growth and division
+
+![Individual growth trajectories and division-time distributions for MATLAB and Python](docs/figures/12_growth_and_division_paper_style.png)
+
+*Individual growth curves and division distributions from the 12 MATLAB and 12 Python cells.*
+
+![Cellular trajectories aligned to fractional progress through each completed cell cycle](docs/figures/07_cycle_aligned_trajectories.png)
+
+*Cell-cycle alignment compares biological progression across cells with different division times.*
+
+<details>
+<summary>Replication milestones and cellular composition</summary>
+
+![Replication, constriction and division milestones](docs/figures/13_cell_cycle_milestones.png)
+
+![Normalized cellular components over the cell cycle](docs/figures/14_normalized_cell_components.png)
+
+</details>
+
+These figures use the recorded fixed-cohort observables. The paper-inspired panels are not exact reproductions of the original paper's analyses. [Figure methods and scope](docs/paper-reproduction.md).
 
 ## Model and implementation
 
@@ -39,12 +70,6 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
 ```
 
 Use separate seeds and output files for independent cells. Inspect stdout and stderr as well as growth, mass, replication and division. Nondivision at the step limit is censored; an error is a failure. Load pickle checkpoints only from trusted sources. [Reproduction instructions](docs/reproducing.md) describe dependency versions, fixture checksums, reanalysis and provenance.
-
-## Figures and media
-
-[Cycle-aligned trajectories](docs/figures/07_cycle_aligned_trajectories.png) · [Simulator discrimination](docs/figures/11_simulator_discrimination.png) · [Growth and division](docs/figures/12_growth_and_division_paper_style.png) · [Cell-cycle milestones](docs/figures/13_cell_cycle_milestones.png) · [Normalized components](docs/figures/14_normalized_cell_components.png)
-
-The [GIF](docs/figures/whole_cell_comparison.gif) and [MP4](docs/figures/whole_cell_comparison.mp4) show the 24-cell ensemble. Cell geometry and DNA placement are schematic; completed cells freeze at division. These figures are inspired by, rather than exact reproductions of, the paper. See [figure methods and scope](docs/paper-reproduction.md).
 
 ## Performance and scope
 
