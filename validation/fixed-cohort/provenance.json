@@ -1,0 +1,352 @@
+{
+  "cohort_seeds": [
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112
+  ],
+  "raw_files": [
+    {
+      "path": "raw/matlab_109_resumed/seed_109.csv",
+      "bytes": 26344,
+      "sha256": "ee7b88c7892548c837a5c3b1bbefa530afbf0e331b7f9a973820e22fae139897"
+    },
+    {
+      "path": "raw/matlab_109_resumed/seed_109.status.json",
+      "bytes": 169,
+      "sha256": "d47fdfc4e37fda28ecc5b7485eea8a02bfc79990f4a02fa66214078b4f972f69"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_102.csv",
+      "bytes": 51621,
+      "sha256": "43987c21aa1c9eb4623855c138d7dfb3222bb3b5d438098f9daad0eaf46ac0c4"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_102.status.json",
+      "bytes": 141,
+      "sha256": "22ef5f55f41b0947e75ee7fc07f37d8c47e275d9a2c6044e12eb1d62cd36fc81"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_103.csv",
+      "bytes": 50294,
+      "sha256": "aa6bf65e2f3ad2bda60f2758649a74ae55be5d007b770f11755d95a2c6460101"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_103.status.json",
+      "bytes": 141,
+      "sha256": "1ea59e6bc7254abcec63d127310c8dee4952f49681d5284ae28ab9b6c487ada5"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_104.csv",
+      "bytes": 44955,
+      "sha256": "c785f0e6f320df4831e8c0c36996044d3e06017a88bb2863a65b4a32bfcdb3c3"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_104.status.json",
+      "bytes": 141,
+      "sha256": "3ad6d4feda9a57d196e2e430340b2e6409e1b54bc6922003b6682ea7b3a5f7f6"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_105.csv",
+      "bytes": 47407,
+      "sha256": "61df5d61ba3598c11e461901d749522bdc30b4f1fd28a4d58e24b6b573c406ad"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_105.status.json",
+      "bytes": 141,
+      "sha256": "e19d5741d1d674759ce074e0d864ac6ff44d03140d33583885cc8d35583f4015"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_106.csv",
+      "bytes": 45851,
+      "sha256": "86fb00acc5a0502386c3ef7c2d318a82aa078c0e392ae264f6bb4379197b90aa"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_106.status.json",
+      "bytes": 141,
+      "sha256": "4e454fb6a05c49693f2bdb9a963a03407d189d6ca97fe421609bc483a902bde3"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_107.csv",
+      "bytes": 46719,
+      "sha256": "9c023568361230474d2429b03985a33a96dff83350619712a51e15e0c46e7701"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_107.status.json",
+      "bytes": 141,
+      "sha256": "8fae79ecb0035f646922009c7ff0ccc09e84a718adbbe402b6b56159d56342c2"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_108.csv",
+      "bytes": 48025,
+      "sha256": "d271c8881281e4b9dbe707d809c88ca0a4d0fa8919a1139e67f263db3df3266c"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_108.status.json",
+      "bytes": 141,
+      "sha256": "48383578b105cdb3631d18a4d32c12c7d2757b2ee18bb3adef1d123203453ffa"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_109.csv",
+      "bytes": 29717,
+      "sha256": "df4a84ee784755179ee9ec2ae73c204ba53eb4968fef31764d323617ea1dbbdd"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_110.csv",
+      "bytes": 50950,
+      "sha256": "e0bc06c9c6e4e0bbba4c8b4c32610c5953e3c8c3188a9f326ef71bd1a0807ffc"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_110.status.json",
+      "bytes": 141,
+      "sha256": "fde0f9d0a1f06bc316b16931f3744877e5c32e6b9602e780435c15c5a3757d4c"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_111.csv",
+      "bytes": 47919,
+      "sha256": "037f1761332f8f31a86aa2dc29a2724be5ea9beb16dc457a9fdf9b42804df7bc"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_111.status.json",
+      "bytes": 141,
+      "sha256": "7b6e001967920dc614e925700a6661682edb8b56da86b5617e15085a49e13264"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_112.csv",
+      "bytes": 46879,
+      "sha256": "efebf7629a5e22a679d8707f1f7b7fe39c358e6ed7decaa6510d41b6cdba47e7"
+    },
+    {
+      "path": "raw/matlab_ensemble_ubuntu/seed_112.status.json",
+      "bytes": 141,
+      "sha256": "f43d6133071f501e07fe787214a8b92c7a7d2eeb32045b07a2de0eeb8ee34903"
+    },
+    {
+      "path": "raw/matlab_seed101/seed_101.csv",
+      "bytes": 47312,
+      "sha256": "5353ac6a4f417c729b4ea1104b7a597ea0d38669b5bedeeb9e29584f786b5c66"
+    },
+    {
+      "path": "raw/matlab_seed101/seed_101.status.json",
+      "bytes": 114,
+      "sha256": "e99153fbaadabfd74424763cdd832cb904f7490ab3b0a97a9e026e8e5a4397ad"
+    },
+    {
+      "path": "raw/python_fixed/manifest.json",
+      "bytes": 1686,
+      "sha256": "5afc0eedda9f88e6e23daea7f2b4c29c1d1b573d428e41010debbbf99054abb4"
+    },
+    {
+      "path": "raw/python_fixed/seed_101.jsonl",
+      "bytes": 11581859,
+      "sha256": "90411319ee38ded86e6756324d30df13a60fb9f9d251f6d6ec4ba48b1cd3b1a1"
+    },
+    {
+      "path": "raw/python_fixed/seed_101.status.json",
+      "bytes": 1392,
+      "sha256": "0dd489c43bb85518f3fcf78c1fa0e2484223a2b0a71377c9a5ecedbe688d2e95"
+    },
+    {
+      "path": "raw/python_fixed/seed_101.stderr.log",
+      "bytes": 1471,
+      "sha256": "5b152f2fd7fadaf91b6d0eff01d1e84594feb2ad92eadb9f284c97d60abfd788"
+    },
+    {
+      "path": "raw/python_fixed/seed_102.jsonl",
+      "bytes": 10383022,
+      "sha256": "ae8f94bca4d27ad9c824d2186d1ba18703031a54f57e645ce958b66714db7eac"
+    },
+    {
+      "path": "raw/python_fixed/seed_102.status.json",
+      "bytes": 1390,
+      "sha256": "7294db4a9559f81d8d9512357fee9ffd47c405f56690bb1611ae7327b9e11d4f"
+    },
+    {
+      "path": "raw/python_fixed/seed_102.stderr.log",
+      "bytes": 1289,
+      "sha256": "387bdbaaffa2dfcf73014281a176da241040c08764b7eb414f5f58a7b5db3004"
+    },
+    {
+      "path": "raw/python_fixed/seed_103.jsonl",
+      "bytes": 10055531,
+      "sha256": "5e4c3d882c3e99c4e6ce74845bd6d18aea96ae716e771cff63067f2e2bfc9b40"
+    },
+    {
+      "path": "raw/python_fixed/seed_103.status.json",
+      "bytes": 1391,
+      "sha256": "cecb8f707f18fca9deaf824266dc863a7a53e72fee94ed8d6fd96a635d0a91dd"
+    },
+    {
+      "path": "raw/python_fixed/seed_103.stderr.log",
+      "bytes": 1471,
+      "sha256": "2818adcbbfad5ab4a42c0fcbf39afa75bdf447f2b3630433f9a1f66ba9767546"
+    },
+    {
+      "path": "raw/python_fixed/seed_104.jsonl",
+      "bytes": 10457126,
+      "sha256": "d24da78a7191226d5bb8101d8df2fb283013cf3a762d72b634307b07b2a0d42d"
+    },
+    {
+      "path": "raw/python_fixed/seed_104.status.json",
+      "bytes": 1391,
+      "sha256": "e061547076890165cf7af5a556c00d32756e6576e36e1aaad087e150283a56ab"
+    },
+    {
+      "path": "raw/python_fixed/seed_104.stderr.log",
+      "bytes": 1471,
+      "sha256": "cbe216ffee921525cfd38e0039f87ebd0586ae98a50c0abe76463280ed7f1544"
+    },
+    {
+      "path": "raw/python_fixed/seed_105.jsonl",
+      "bytes": 11873072,
+      "sha256": "b9bd8fe58b66f9625a1ae5f892d3db8efcfc2154c410f72a53ecabf7b232173e"
+    },
+    {
+      "path": "raw/python_fixed/seed_105.status.json",
+      "bytes": 1390,
+      "sha256": "dcd4ee8caa5b3a449a0a19d0c9c00287c0235d4d2b3130e32270f4fe20533763"
+    },
+    {
+      "path": "raw/python_fixed/seed_105.stderr.log",
+      "bytes": 1471,
+      "sha256": "5b3d616aeb841d904f941c12c4efd606128ba96662de77c67d8179cbd0d91479"
+    },
+    {
+      "path": "raw/python_fixed/seed_106.jsonl",
+      "bytes": 11264168,
+      "sha256": "3621d0778a7c201c5cf32e8c742dc8328fbaffe75eb346701bac6986ffc92aca"
+    },
+    {
+      "path": "raw/python_fixed/seed_106.status.json",
+      "bytes": 1390,
+      "sha256": "62922820f570267b41d057f8c69bd2dad846e0fdf86acddbc49d4f8d8341a95a"
+    },
+    {
+      "path": "raw/python_fixed/seed_106.stderr.log",
+      "bytes": 915,
+      "sha256": "286a1182b845b7b4949761bd2f2dac3d6ab3fe3b7c6dc3e88b4755798125810d"
+    },
+    {
+      "path": "raw/python_fixed/seed_107.jsonl",
+      "bytes": 10704278,
+      "sha256": "9c8861d4aa535c13f17ad8f4a6261af9015ac929a41665c23bbe742f105d4313"
+    },
+    {
+      "path": "raw/python_fixed/seed_107.status.json",
+      "bytes": 1389,
+      "sha256": "bd80d421986af4b6ffe0f3b0a2a5cff6556128685c755a972e73b1574965764d"
+    },
+    {
+      "path": "raw/python_fixed/seed_107.stderr.log",
+      "bytes": 1301,
+      "sha256": "b527cd368757a30018f18c3c110928b4727a06e4c813ccb0db811be51cc5220a"
+    },
+    {
+      "path": "raw/python_fixed/seed_108.jsonl",
+      "bytes": 10214938,
+      "sha256": "e6a615b796e6f9849c8d592e8c8288e0f3fb4d3651c1f28628b187563bbfac95"
+    },
+    {
+      "path": "raw/python_fixed/seed_108.status.json",
+      "bytes": 1390,
+      "sha256": "46ca17b6146efa6d3cd13d8003d327dd6a7f6f790a62da3645f18d6ca8075619"
+    },
+    {
+      "path": "raw/python_fixed/seed_108.stderr.log",
+      "bytes": 1303,
+      "sha256": "1a875dfb7e10201023a1bacf25c394794e782b3e86f3ac90d4c4c183c2f862aa"
+    },
+    {
+      "path": "raw/python_fixed/seed_109.jsonl",
+      "bytes": 10619041,
+      "sha256": "3e0d6286f32079467f615b249cb572c17b09878b90c29a3ad2e5b2b84c87a5a2"
+    },
+    {
+      "path": "raw/python_fixed/seed_109.status.json",
+      "bytes": 1390,
+      "sha256": "c1660229dae22f61a5976be8d5c7f0ae05ec5976711c5928907d4c3e96622597"
+    },
+    {
+      "path": "raw/python_fixed/seed_109.stderr.log",
+      "bytes": 913,
+      "sha256": "079bbba23de9c15bff458fb2857c8a7765dd7b86d3da537b3d385e48b6d8b6ea"
+    },
+    {
+      "path": "raw/python_fixed/seed_110.jsonl",
+      "bytes": 10944004,
+      "sha256": "18f81d297d75c1fa3f6ec5a8ebf4bc975d723be951745bb7a024a0bfd7771af2"
+    },
+    {
+      "path": "raw/python_fixed/seed_110.status.json",
+      "bytes": 1392,
+      "sha256": "746cecb28a1ace4e8f6617d1c7effca726f7c76337eecd5cb2211aaf7359fa2d"
+    },
+    {
+      "path": "raw/python_fixed/seed_110.stderr.log",
+      "bytes": 1083,
+      "sha256": "7fcd130fb45131e01e4ee1efec4d32ef705f892b20bb0169f531a04c7a7daff8"
+    },
+    {
+      "path": "raw/python_fixed/seed_111.jsonl",
+      "bytes": 10413864,
+      "sha256": "c05051858445fc2bedc7cf921781f8214fcb79acd4fb6c96fb7b27d172d6e579"
+    },
+    {
+      "path": "raw/python_fixed/seed_111.status.json",
+      "bytes": 1392,
+      "sha256": "a1cbee0f56a414e80896b20ecdfaeb689128ce1271ef9c7eb4bdfbd54221a245"
+    },
+    {
+      "path": "raw/python_fixed/seed_111.stderr.log",
+      "bytes": 1289,
+      "sha256": "b5e8cba3724548f1845d6d8a3ea830d8734a03c83729c09ebc8396af544ced70"
+    },
+    {
+      "path": "raw/python_fixed/seed_112.jsonl",
+      "bytes": 11190549,
+      "sha256": "748b8fd2d56d2cc383d466f260eacff9bc4227528337794921f6262d72e32db0"
+    },
+    {
+      "path": "raw/python_fixed/seed_112.status.json",
+      "bytes": 1387,
+      "sha256": "439aa369bc7f1382dd0438a3f8a64ed1452d75cef70a8aaa462bb37afec97a40"
+    },
+    {
+      "path": "raw/python_fixed/seed_112.stderr.log",
+      "bytes": 1303,
+      "sha256": "1a875dfb7e10201023a1bacf25c394794e782b3e86f3ac90d4c4c183c2f862aa"
+    }
+  ],
+  "python_splices": [],
+  "matlab_seed109_splice_s": 12000,
+  "bootstrap": {
+    "replicates": 4000,
+    "seed": 20261101,
+    "unit": "whole cell trajectory",
+    "independent_between_models": true
+  },
+  "absolute_time_policy": "Exact shared60sgrid until earliest division; full individual curves retained beyond it; no survivor means.",
+  "phase_policy": "Linear interpolation from120s to eachcell division,201points; descriptive and timing-normalized.",
+  "source_digest": "d4e29731194d75ed645f117b3ad312742feb0e27d9f3c954eca8537ba756f98a",
+  "limitations": "Fixed-source Python trajectories from original MATLAB t60 state, no Python continuations. Independent RNG ensembles; no paired-seed inference. Fixed original 12-cell cohort. Statistical analysis of aggregate observables, conditional on one initial state; no prespecified equivalence margins.",
+  "figures": [
+    "01_full_cycle_overview",
+    "02_growth_mass_and_spread",
+    "03_expression_and_spread",
+    "04_replication_and_constriction",
+    "05_division_time_distributions",
+    "06_bias_and_variance_ratios",
+    "07_cycle_aligned_trajectories",
+    "08_composition_at_division",
+    "09_all_observable_mean_differences",
+    "10_all_observable_variance_ratios"
+  ]
+}

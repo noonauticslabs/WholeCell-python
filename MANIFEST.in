@@ -1,0 +1,9 @@
+include LICENSE THIRD_PARTY_NOTICES.md CITATION.cff constraints-ubuntu.txt
+recursive-include LICENSES *.txt
+recursive-include docs *.md *.png *.gif *.mp4
+recursive-include scripts *.py *.sh
+recursive-include reference *.gz *.m manifest.json activation_rules.json accessibility_queries.json matlab_seed1.json matlab_rng_ensemble.json matlab_rng_ensemble_extended.json metabolism_t0.json model_parameters_plain.mat polymerize_checks.json region_queries.json requirements_t0.json state_weights_t0.json
+recursive-include validation *.json *.csv *.npz *.md
+recursive-include vendor *.tar.gz *.c README.md
+recursive-include tests *.py
+prune validation/generated

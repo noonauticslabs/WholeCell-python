@@ -1,0 +1,90 @@
+{
+  "source_commit": "6cdee6b355aa0f5ff2953b1ab356eea049108e07",
+  "origin": "Exported from the original WholeCell model under licensed MATLAB; native MATLAB RNG state is provenance only for Python runs",
+  "sanitization": "KB export source_file changed to basename; biological snapshot bytes unchanged",
+  "files": [
+    {
+      "path": "accessibility_queries.json",
+      "sha256": "7484420fc43825087a1166b79d976514cb17605d5104ca76cb0fe7fc05adee00",
+      "bytes": 17033
+    },
+    {
+      "path": "activation_rules.json",
+      "sha256": "4476a16c14b579e6e804a0ee036fd29a8073c1b7b4bf35815da4a0d34a1f3141",
+      "bytes": 1690
+    },
+    {
+      "path": "kb_audit_export_20261101.json",
+      "sha256": "fe43bef10859853021f20b38b25972b40b976d45e34792fb414ec7c8734f4559",
+      "bytes": 19047462,
+      "archive": "kb_audit_export_20261101.json.gz",
+      "archive_sha256": "cc4f40479abc1bbcceeec99a5d40a5e0c966d9d7d50c86823f24a068a1b45ef1"
+    },
+    {
+      "path": "matlab_rng_ensemble.json",
+      "sha256": "a342e90a51571845fc68f7f4177f69d6b70054fabd94b960ec4ac5ed57a0342a",
+      "bytes": 707
+    },
+    {
+      "path": "matlab_rng_ensemble_extended.json",
+      "sha256": "695dc0620d37dc10fd78ffd9a304fba5dd382ace6b547104593811373c71b850",
+      "bytes": 1944
+    },
+    {
+      "path": "matlab_seed1.json",
+      "sha256": "5f9846e91270c031eb1e9f9c14d5ba05d0a74e241125b43861138cfb57e46a3d",
+      "bytes": 1213448
+    },
+    {
+      "path": "metabolism_t0.json",
+      "sha256": "21b53b66447a4f72afc8af5a6cf145045c0dfb992262d607611874658f3e691e",
+      "bytes": 21168
+    },
+    {
+      "path": "model_parameters_plain.mat",
+      "sha256": "25ae9001277c13195e96e35b1b8cee674dd99981bfb419aedbbe5c013fbab63e",
+      "bytes": 1077045
+    },
+    {
+      "path": "polymerize_checks.json",
+      "sha256": "0ee13c1dd1340bf29521f1de763d269713d5e559583fdb1972bc3d256dfea186",
+      "bytes": 739
+    },
+    {
+      "path": "region_queries.json",
+      "sha256": "7a14b5a5a04180a1faed0042ca29acdf020a4153c1e4338fad87df20c86f98e7",
+      "bytes": 11447
+    },
+    {
+      "path": "requirements_t0.json",
+      "sha256": "a16c33f228a8614ed60d393c89b35562e36ff361688acfc6de3943e3a3b9ff1f",
+      "bytes": 9620
+    },
+    {
+      "path": "snapshot_seed22_t4000.json",
+      "sha256": "3e00b58801c458a7039d616f8dfa2eb01700ef25ff23c23ad1d413b559c52d14",
+      "bytes": 31035605,
+      "archive": "snapshot_seed22_t4000.json.gz",
+      "archive_sha256": "f6399f4cbb87d1b8590237fc7aaa1090b2aed01802d7f1f5bcba43a0f325d2e0"
+    },
+    {
+      "path": "snapshot_t0.json",
+      "sha256": "4dc834a99587cb34a16534026dfc6e9de03a9f281f6d7661cb7d60596d1a5206",
+      "bytes": 31030151,
+      "archive": "snapshot_t0.json.gz",
+      "archive_sha256": "f6a52e82428af282e82337b5b59858fbba6b08d1b9bf0dfbad20645dc34c7db7"
+    },
+    {
+      "path": "snapshot_t60.json",
+      "sha256": "ea7c06377a527c8c4cdae6a83abe8caf50af344a00acff9395771f9f9e7f2a96",
+      "bytes": 31025113,
+      "archive": "snapshot_t60.json.gz",
+      "archive_sha256": "b1a1469014a1eb264d178b4f99ff91132f229b9f0a72c50076dfe33ca695122f"
+    },
+    {
+      "path": "state_weights_t0.json",
+      "sha256": "d1571903a8a0507c9cf75c5f06f1bbd79f4a637ebed241d7d011889a3350fa1b",
+      "bytes": 935
+    }
+  ]
+}

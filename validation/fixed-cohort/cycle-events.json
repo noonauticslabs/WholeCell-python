@@ -1,0 +1,404 @@
+{
+  "fields": [
+    "time_s",
+    "dry_mass_g",
+    "growth",
+    "rna",
+    "monomers",
+    "complexes",
+    "ploidy",
+    "diameter_m"
+  ],
+  "definitions": {
+    "dna_completion": "First recorded ploidy >= 2 - 1e-9; interval bounded by preceding record",
+    "constriction_onset": "First recorded diameter < 99% of first recorded diameter; operational proxy, not original cytokinesis-stage flag",
+    "initiation": "Already underway in first record; original initiation duration unavailable",
+    "animation": "Linear interpolation between samples for display only; freeze after division, no daughter simulation"
+  },
+  "events": [
+    {
+      "model": "MATLAB",
+      "seed": 101,
+      "division_s": 28592.0,
+      "first_recorded_s": 120.0,
+      "first_ploidy": 1.01945003758128,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        24600.0,
+        24660.0
+      ],
+      "constriction_onset_bracket_s": [
+        24720.0,
+        24780.0
+      ]
+    },
+    {
+      "model": "MATLAB",
+      "seed": 102,
+      "division_s": 31113.0,
+      "first_recorded_s": 120.0,
+      "first_ploidy": 1.01953623318324,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        27300.0,
+        27360.0
+      ],
+      "constriction_onset_bracket_s": [
+        27360.0,
+        27420.0
+      ]
+    },
+    {
+      "model": "MATLAB",
+      "seed": 103,
+      "division_s": 30313.0,
+      "first_recorded_s": 120.0,
+      "first_ploidy": 1.02031199360084,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        26400.0,
+        26460.0
+      ],
+      "constriction_onset_bracket_s": [
+        26520.0,
+        26580.0
+      ]
+    },
+    {
+      "model": "MATLAB",
+      "seed": 104,
+      "division_s": 27195.0,
+      "first_recorded_s": 120.0,
+      "first_ploidy": 1.02005340679497,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        23100.0,
+        23160.0
+      ],
+      "constriction_onset_bracket_s": [
+        23220.0,
+        23280.0
+      ]
+    },
+    {
+      "model": "MATLAB",
+      "seed": 105,
+      "division_s": 28634.0,
+      "first_recorded_s": 120.0,
+      "first_ploidy": 1.01866479564747,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        24540.0,
+        24600.0
+      ],
+      "constriction_onset_bracket_s": [
+        24660.0,
+        24720.0
+      ]
+    },
+    {
+      "model": "MATLAB",
+      "seed": 106,
+      "division_s": 27737.0,
+      "first_recorded_s": 120.0,
+      "first_ploidy": 1.02038008812638,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        23640.0,
+        23700.0
+      ],
+      "constriction_onset_bracket_s": [
+        23820.0,
+        23880.0
+      ]
+    },
+    {
+      "model": "MATLAB",
+      "seed": 107,
+      "division_s": 28236.0,
+      "first_recorded_s": 120.0,
+      "first_ploidy": 1.0182432991539,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        24240.0,
+        24300.0
+      ],
+      "constriction_onset_bracket_s": [
+        24360.0,
+        24420.0
+      ]
+    },
+    {
+      "model": "MATLAB",
+      "seed": 108,
+      "division_s": 29031.0,
+      "first_recorded_s": 120.0,
+      "first_ploidy": 1.02063867493225,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        25020.0,
+        25080.0
+      ],
+      "constriction_onset_bracket_s": [
+        25140.0,
+        25200.0
+      ]
+    },
+    {
+      "model": "MATLAB",
+      "seed": 109,
+      "division_s": 28067.0,
+      "first_recorded_s": 120.0,
+      "first_ploidy": 1.02062919341604,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        24060.0,
+        24120.0
+      ],
+      "constriction_onset_bracket_s": [
+        24180.0,
+        24240.0
+      ]
+    },
+    {
+      "model": "MATLAB",
+      "seed": 110,
+      "division_s": 30759.0,
+      "first_recorded_s": 120.0,
+      "first_ploidy": 1.02002582420235,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        26760.0,
+        26820.0
+      ],
+      "constriction_onset_bracket_s": [
+        26880.0,
+        26940.0
+      ]
+    },
+    {
+      "model": "MATLAB",
+      "seed": 111,
+      "division_s": 28965.0,
+      "first_recorded_s": 120.0,
+      "first_ploidy": 1.01962242878519,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        24960.0,
+        25020.0
+      ],
+      "constriction_onset_bracket_s": [
+        25080.0,
+        25140.0
+      ]
+    },
+    {
+      "model": "MATLAB",
+      "seed": 112,
+      "division_s": 28327.0,
+      "first_recorded_s": 120.0,
+      "first_ploidy": 1.0187544390735,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        24300.0,
+        24360.0
+      ],
+      "constriction_onset_bracket_s": [
+        24420.0,
+        24480.0
+      ]
+    },
+    {
+      "model": "Python",
+      "seed": 101,
+      "division_s": 30713.0,
+      "first_recorded_s": 61.0,
+      "first_ploidy": 1.011833794192485,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        26830.0,
+        26831.0
+      ],
+      "constriction_onset_bracket_s": [
+        26955.0,
+        26956.0
+      ]
+    },
+    {
+      "model": "Python",
+      "seed": 102,
+      "division_s": 27562.0,
+      "first_recorded_s": 61.0,
+      "first_ploidy": 1.011661402988574,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        23637.0,
+        23638.0
+      ],
+      "constriction_onset_bracket_s": [
+        23736.0,
+        23737.0
+      ]
+    },
+    {
+      "model": "Python",
+      "seed": 103,
+      "division_s": 26701.0,
+      "first_recorded_s": 61.0,
+      "first_ploidy": 1.0117475985905295,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        22835.0,
+        22836.0
+      ],
+      "constriction_onset_bracket_s": [
+        22931.0,
+        22932.0
+      ]
+    },
+    {
+      "model": "Python",
+      "seed": 104,
+      "division_s": 27767.0,
+      "first_recorded_s": 61.0,
+      "first_ploidy": 1.011833794192485,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        23725.0,
+        23726.0
+      ],
+      "constriction_onset_bracket_s": [
+        23839.0,
+        23840.0
+      ]
+    },
+    {
+      "model": "Python",
+      "seed": 105,
+      "division_s": 31486.0,
+      "first_recorded_s": 61.0,
+      "first_ploidy": 1.0117475985905295,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        27441.0,
+        27442.0
+      ],
+      "constriction_onset_bracket_s": [
+        27593.0,
+        27594.0
+      ]
+    },
+    {
+      "model": "Python",
+      "seed": 106,
+      "division_s": 29881.0,
+      "first_recorded_s": 61.0,
+      "first_ploidy": 1.011661402988574,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        25829.0,
+        25830.0
+      ],
+      "constriction_onset_bracket_s": [
+        25949.0,
+        25950.0
+      ]
+    },
+    {
+      "model": "Python",
+      "seed": 107,
+      "division_s": 28415.0,
+      "first_recorded_s": 61.0,
+      "first_ploidy": 1.011661402988574,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        24513.0,
+        24514.0
+      ],
+      "constriction_onset_bracket_s": [
+        24621.0,
+        24622.0
+      ]
+    },
+    {
+      "model": "Python",
+      "seed": 108,
+      "division_s": 27127.0,
+      "first_recorded_s": 61.0,
+      "first_ploidy": 1.011661402988574,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        23153.0,
+        23154.0
+      ],
+      "constriction_onset_bracket_s": [
+        23273.0,
+        23274.0
+      ]
+    },
+    {
+      "model": "Python",
+      "seed": 109,
+      "division_s": 28190.0,
+      "first_recorded_s": 61.0,
+      "first_ploidy": 1.011833794192485,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        24238.0,
+        24239.0
+      ],
+      "constriction_onset_bracket_s": [
+        24360.0,
+        24361.0
+      ]
+    },
+    {
+      "model": "Python",
+      "seed": 110,
+      "division_s": 29048.0,
+      "first_recorded_s": 61.0,
+      "first_ploidy": 1.0117475985905295,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        25057.0,
+        25058.0
+      ],
+      "constriction_onset_bracket_s": [
+        25137.0,
+        25138.0
+      ]
+    },
+    {
+      "model": "Python",
+      "seed": 111,
+      "division_s": 27654.0,
+      "first_recorded_s": 61.0,
+      "first_ploidy": 1.0117475985905295,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        23589.0,
+        23590.0
+      ],
+      "constriction_onset_bracket_s": [
+        23707.0,
+        23708.0
+      ]
+    },
+    {
+      "model": "Python",
+      "seed": 112,
+      "division_s": 29688.0,
+      "first_recorded_s": 61.0,
+      "first_ploidy": 1.011833794192485,
+      "initiation_left_censored": true,
+      "dna_completion_bracket_s": [
+        25706.0,
+        25707.0
+      ],
+      "constriction_onset_bracket_s": [
+        25825.0,
+        25826.0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1395 @@
+{
+  "format_version": 1,
+  "files": [
+    {
+      "path": ".flake8",
+      "sha256": "a898341194b736063e68b83865b0b02e5da3633c254a94216f351cacdd456d07",
+      "bytes": 105
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "f40661d8bc892e794efb2ed3cba7ae8ce4c56fd910c8b69fba07dc6fa541b8f0",
+      "bytes": 133
+    },
+    {
+      "path": ".github/workflows/test.yml",
+      "sha256": "0ccd049873d851f29ed0cdbdcde6b4575f41edca714afd3fbf4b0e22c3cd34ce",
+      "bytes": 649
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "59f8e077334edf36e3694cf56ff118f54cead01fa91bc2922b85c0c5a469ba47",
+      "bytes": 229
+    },
+    {
+      "path": "CITATION.cff",
+      "sha256": "d123d713e4f6ceb4da1b5386caa8708dba230bc032994b5c93e7817623b8d665",
+      "bytes": 1152
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "396f75fab085d55340e46d07cf4f518077086b1e2b8c5fffdacfdc14691f091d",
+      "bytes": 1456
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "3453d25c0eb3794bf56c84095eabb5798a8f3870658a6f539e4ea01eba1cc14d",
+      "bytes": 1188
+    },
+    {
+      "path": "LICENSES/GLPK-GPL-3.0.txt",
+      "sha256": "691de85c3c6eeda5b6982c751548575344739ce4b4418d78905e599359f6c435",
+      "bytes": 35149
+    },
+    {
+      "path": "LICENSES/WholeCell-MIT.txt",
+      "sha256": "e3ca586f75159b959bb98890a9e5dd460505ca8d79dce668d76e20fd9d072c4f",
+      "bytes": 1122
+    },
+    {
+      "path": "MANIFEST.in",
+      "sha256": "dc11ae96712e8aad41d3e3b6c744f637a68afe4a2b135f32e0a95d5b93702587",
+      "bytes": 656
+    },
+    {
+      "path": "README.md",
+      "sha256": "3deb4ce27dfa2b2827660e7cd4ff1f0312524376e7f5e321466711f241a56362",
+      "bytes": 7062
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "f0604ed25e9ba19e8c29d0ae0b3380b8604120f7125531fdaf06eeebd8b8a404",
+      "bytes": 1942
+    },
+    {
+      "path": "constraints-ubuntu.txt",
+      "sha256": "15dde23d86c7e50448a3619ae4f09e32a61511de1a0472a1674b0715ae3d363e",
+      "bytes": 103
+    },
+    {
+      "path": "docs/figures/01_full_cycle_overview.png",
+      "sha256": "a9bf1cfe72a7213c4c068e4313f9408f0bd65eeae608103c370ddc8772fadb01",
+      "bytes": 446662
+    },
+    {
+      "path": "docs/figures/07_cycle_aligned_trajectories.png",
+      "sha256": "1f1805647a1b12ed00b63bc7e48bab98506f9809652844515b436810c60d93e5",
+      "bytes": 416944
+    },
+    {
+      "path": "docs/figures/11_simulator_discrimination.png",
+      "sha256": "06ef5fe74df02749ef786fc960a81b0fd37eb25d847cb0fdfea1b496158205b9",
+      "bytes": 188786
+    },
+    {
+      "path": "docs/figures/12_growth_and_division_paper_style.png",
+      "sha256": "9305c0ab6ce13626b1630e4524d67424b3906d0418823ec96273474a952b91ee",
+      "bytes": 299244
+    },
+    {
+      "path": "docs/figures/13_cell_cycle_milestones.png",
+      "sha256": "6eec2515c8808ff6d4637bc2895738a7427d0b1900d1e623732b2a685dcf1d61",
+      "bytes": 194595
+    },
+    {
+      "path": "docs/figures/14_normalized_cell_components.png",
+      "sha256": "d255c4a565651372e39de083d93f3b1a975b0696d913a2be05087cd4f7c0aad1",
+      "bytes": 251814
+    },
+    {
+      "path": "docs/figures/whole_cell_comparison.gif",
+      "sha256": "3178020bfc217c485f52e3ff73a11865903e403d084554b2df9ce42fb923b99b",
+      "bytes": 6867189
+    },
+    {
+      "path": "docs/figures/whole_cell_comparison.mp4",
+      "sha256": "6e7544b8bb7be94e33ed4ed66d3e2006662ef9f707c14cddc8e858a8e1339332",
+      "bytes": 437895
+    },
+    {
+      "path": "docs/initialization.md",
+      "sha256": "f2efcf0873f014e806e409d31c2ae7438de2222702412aa1eb77c09102be28f2",
+      "bytes": 3856
+    },
+    {
+      "path": "docs/limitations.md",
+      "sha256": "e207e6bdb68928baa4dfabcad490ad360aa6a922b02bc9c5c6946ee4c2af1a36",
+      "bytes": 2316
+    },
+    {
+      "path": "docs/matlab-compatibility.md",
+      "sha256": "f7bf65e81d4f6cd8a8530c129747ca39d41a426db295790aca471b7e3abd0fd5",
+      "bytes": 3522
+    },
+    {
+      "path": "docs/paper-reproduction.md",
+      "sha256": "59cc181f18986f8a961a058b59c6c707655d0b582dadd7c77e703410f0e8078b",
+      "bytes": 5255
+    },
+    {
+      "path": "docs/reproducing.md",
+      "sha256": "b3b9a28358fbdc9bab0b18f8e973871a71ab0bbdc0d31c5f4304cfcb92fb1c12",
+      "bytes": 4646
+    },
+    {
+      "path": "docs/runtime-contracts.md",
+      "sha256": "a82f0a147326036863400d33e52d649ac18575b1022f8c19f1398f2e6e7fff0b",
+      "bytes": 3206
+    },
+    {
+      "path": "docs/validation.md",
+      "sha256": "9ebfab811b6d33f4516c90b9229a3ee193c8915a99897b69b968d1c32798faa8",
+      "bytes": 6441
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "b334cdf8eb76fed7efd0af89adfac6035fff07cabae5b800f7ae4a833b5ca8a6",
+      "bytes": 1073
+    },
+    {
+      "path": "reference/accessibility_queries.json",
+      "sha256": "7484420fc43825087a1166b79d976514cb17605d5104ca76cb0fe7fc05adee00",
+      "bytes": 17033
+    },
+    {
+      "path": "reference/activation_rules.json",
+      "sha256": "4476a16c14b579e6e804a0ee036fd29a8073c1b7b4bf35815da4a0d34a1f3141",
+      "bytes": 1690
+    },
+    {
+      "path": "reference/export_accessibility_queries.m",
+      "sha256": "9a3e0b1f133c373e10f80bd7d5f0d5dfe4b939823bcd1c8ffd4761be8f4d16e3",
+      "bytes": 2070
+    },
+    {
+      "path": "reference/export_region_queries.m",
+      "sha256": "8f16f2f33669a46da957cd5d6dacd5230fc656415a1fad76494950b0b268e17e",
+      "bytes": 1551
+    },
+    {
+      "path": "reference/export_snapshot.m",
+      "sha256": "30f4bc8af7292b9c34b9ef0d4c1d1eb899fe1823eb470dfb66af597dc982dad0",
+      "bytes": 3916
+    },
+    {
+      "path": "reference/kb_audit_export_20261101.json.gz",
+      "sha256": "cc4f40479abc1bbcceeec99a5d40a5e0c966d9d7d50c86823f24a068a1b45ef1",
+      "bytes": 708036
+    },
+    {
+      "path": "reference/manifest.json",
+      "sha256": "17eb820a1d53e00d0051dfaaa0073388a6b1d68d15a5347f44e21068cce9f9f2",
+      "bytes": 3257
+    },
+    {
+      "path": "reference/matlab_rng_ensemble.json",
+      "sha256": "a342e90a51571845fc68f7f4177f69d6b70054fabd94b960ec4ac5ed57a0342a",
+      "bytes": 707
+    },
+    {
+      "path": "reference/matlab_rng_ensemble_extended.json",
+      "sha256": "695dc0620d37dc10fd78ffd9a304fba5dd382ace6b547104593811373c71b850",
+      "bytes": 1944
+    },
+    {
+      "path": "reference/matlab_seed1.json",
+      "sha256": "5f9846e91270c031eb1e9f9c14d5ba05d0a74e241125b43861138cfb57e46a3d",
+      "bytes": 1213448
+    },
+    {
+      "path": "reference/metabolism_t0.json",
+      "sha256": "21b53b66447a4f72afc8af5a6cf145045c0dfb992262d607611874658f3e691e",
+      "bytes": 21168
+    },
+    {
+      "path": "reference/model_parameters_plain.mat",
+      "sha256": "25ae9001277c13195e96e35b1b8cee674dd99981bfb419aedbbe5c013fbab63e",
+      "bytes": 1077045
+    },
+    {
+      "path": "reference/polymerize_checks.json",
+      "sha256": "0ee13c1dd1340bf29521f1de763d269713d5e559583fdb1972bc3d256dfea186",
+      "bytes": 739
+    },
+    {
+      "path": "reference/region_queries.json",
+      "sha256": "7a14b5a5a04180a1faed0042ca29acdf020a4153c1e4338fad87df20c86f98e7",
+      "bytes": 11447
+    },
+    {
+      "path": "reference/requirements_t0.json",
+      "sha256": "a16c33f228a8614ed60d393c89b35562e36ff361688acfc6de3943e3a3b9ff1f",
+      "bytes": 9620
+    },
+    {
+      "path": "reference/run_rng_ensemble.m",
+      "sha256": "8dfb92f059322d5359de27726cefc2d431849195295f8763c4ffe145fff88e62",
+      "bytes": 1234
+    },
+    {
+      "path": "reference/run_rng_ensemble_extended.m",
+      "sha256": "368513cba34094fd4d0a15f6e45e071fa886824f80d42f2676990aad95f07484",
+      "bytes": 1234
+    },
+    {
+      "path": "reference/snapshot_seed22_t4000.json.gz",
+      "sha256": "f6399f4cbb87d1b8590237fc7aaa1090b2aed01802d7f1f5bcba43a0f325d2e0",
+      "bytes": 1256586
+    },
+    {
+      "path": "reference/snapshot_t0.json.gz",
+      "sha256": "f6a52e82428af282e82337b5b59858fbba6b08d1b9bf0dfbad20645dc34c7db7",
+      "bytes": 1255930
+    },
+    {
+      "path": "reference/snapshot_t60.json.gz",
+      "sha256": "b1a1469014a1eb264d178b4f99ff91132f229b9f0a72c50076dfe33ca695122f",
+      "bytes": 1255599
+    },
+    {
+      "path": "reference/state_weights_t0.json",
+      "sha256": "d1571903a8a0507c9cf75c5f06f1bbd79f4a637ebed241d7d011889a3350fa1b",
+      "bytes": 935
+    },
+    {
+      "path": "scripts/analyze_bias.py",
+      "sha256": "0e0a2c3fd3f8263892f227881746a366905106523b09285f51d7b658faad9441",
+      "bytes": 2053
+    },
+    {
+      "path": "scripts/analyze_ensemble.py",
+      "sha256": "d0cde197465a8e2c9f6a581ef5595828a0599a708f006bf09995a59de1c308fd",
+      "bytes": 8169
+    },
+    {
+      "path": "scripts/analyze_historical_ensemble.py",
+      "sha256": "87810c8806caaae32ec2cbf0b4badcd8b352b6a4e7d6eb2891ac97a8707cf3e9",
+      "bytes": 8204
+    },
+    {
+      "path": "scripts/build_glpk.sh",
+      "sha256": "43f3335c7badc8866410bb19de049341fa81bf5d26efd0ca68c0638a50660fb3",
+      "bytes": 1107
+    },
+    {
+      "path": "scripts/check_release.py",
+      "sha256": "e1f30125d7a4135c1331a63b4e598eacefd9420576936de31d30256016c0dacb",
+      "bytes": 3344
+    },
+    {
+      "path": "scripts/chromosome_frame.py",
+      "sha256": "f177d6d416aeb872b120e404b7e7bdb61a7e856db84c1958db15e9ff160a36f6",
+      "bytes": 4831
+    },
+    {
+      "path": "scripts/package_source.py",
+      "sha256": "dd126655d967697b191a3a3e50a2c09e1b8ffa32334b0b3d11e19e4c07655034",
+      "bytes": 2312
+    },
+    {
+      "path": "scripts/paper_presentation.py",
+      "sha256": "43a80ff2ec81f33de5d5ed35befbac04a9a5a086fc8e47fa99bc0e33621ed7a1",
+      "bytes": 12059
+    },
+    {
+      "path": "scripts/plot_ensemble.py",
+      "sha256": "b4a31adaf7e474498fbf680100393b4543392c9ac45cb3d2d2554b89efdf1156",
+      "bytes": 22737
+    },
+    {
+      "path": "scripts/prepare_fixtures.py",
+      "sha256": "c3f679c6f523bc46aa696359af1a91dc3d53fbd6aad0fc66b8c42e723619cbc0",
+      "bytes": 1214
+    },
+    {
+      "path": "scripts/verify_installation.py",
+      "sha256": "f6eca80a2c43b2ffbec238b08ef9f8af00b65fbde4e8c92082280a13955c3cdc",
+      "bytes": 2004
+    },
+    {
+      "path": "tests/test_checkpoint.py",
+      "sha256": "a6080fc4a003fc91e4500d0d219d5cba1d6a8c94f81ccb72c8b33770a3d0a7b3",
+      "bytes": 2581
+    },
+    {
+      "path": "tests/test_chromosome_accessibility.py",
+      "sha256": "27c6349974966527335fba9aa71e128602fb034089b2796052186e8f0a0a1e9c",
+      "bytes": 1929
+    },
+    {
+      "path": "tests/test_chromosome_binding_creation.py",
+      "sha256": "f0144316e43765773fbefc64ee20613420480b39e49808c6cd77977e4543a58a",
+      "bytes": 3404
+    },
+    {
+      "path": "tests/test_chromosome_binding_updates.py",
+      "sha256": "fa2636b8331b212411acb7defaefe7404990a20eea1bc152f641f9cf11724667",
+      "bytes": 2436
+    },
+    {
+      "path": "tests/test_chromosome_breaks.py",
+      "sha256": "febd0fd66284b90d7cbdc5f3035df8b3c549ec793e383c4b701345de6e0bc428",
+      "bytes": 3296
+    },
+    {
+      "path": "tests/test_chromosome_condensation.py",
+      "sha256": "af4486990e6969535ca835683f9c6dbccbc98764a1a12c242106a4c2c0a63aef",
+      "bytes": 4171
+    },
+    {
+      "path": "tests/test_chromosome_damage_views.py",
+      "sha256": "73e6452bdb09f8d47a3ed84d972b161f4ef02a7e65b495376460db7d227307b7",
+      "bytes": 4869
+    },
+    {
+      "path": "tests/test_chromosome_derived.py",
+      "sha256": "4c357589ab4545a8932c2e8428fecaaab38fed267408aa6ff65de61a36aea276",
+      "bytes": 5026
+    },
+    {
+      "path": "tests/test_chromosome_derived_cache.py",
+      "sha256": "2fd389986ab5701139ab377e321fe1a31db740b005f7ac24e13eaf9ba888d847",
+      "bytes": 4628
+    },
+    {
+      "path": "tests/test_chromosome_mass_view.py",
+      "sha256": "4f4524c46c4759859628213cfe423929944dec4f662c544c608d902bc174059f",
+      "bytes": 3416
+    },
+    {
+      "path": "tests/test_chromosome_polymerized_queries.py",
+      "sha256": "1a369664f8e08ec289906c1514c827dabc3a46d3bab4a9f12ffd46020ca55b76",
+      "bytes": 2518
+    },
+    {
+      "path": "tests/test_chromosome_process_aspect.py",
+      "sha256": "dcce53351ad2bdedc91cf9e0d22205fb585242bae91e7af0aedae284a7c376be",
+      "bytes": 4564
+    },
+    {
+      "path": "tests/test_chromosome_protein_free.py",
+      "sha256": "8d636a6347e578575db7787088022b195d9ccf713280d61731112c9be721b8e3",
+      "bytes": 2704
+    },
+    {
+      "path": "tests/test_chromosome_reference.py",
+      "sha256": "b18ffd62824cd0ca58f96ed4d02bba6923d0466595eed53d91574710c30fa371",
+      "bytes": 5663
+    },
+    {
+      "path": "tests/test_chromosome_regions.py",
+      "sha256": "fa3f2c21261c54bd30d648e9cf1f393b37468fa34e812105fd456b4937fa1010",
+      "bytes": 2599
+    },
+    {
+      "path": "tests/test_chromosome_renderer.py",
+      "sha256": "a336b79e640e49831c20dd8fdee27e73d345cd5919e162c0ff1d48e1fc9fe968",
+      "bytes": 1325
+    },
+    {
+      "path": "tests/test_chromosome_restriction_queries.py",
+      "sha256": "5d6857a340bd0b2ba5a9a4a86dfac9d4c9d7569b28c08488b981a616a1b05261",
+      "bytes": 1923
+    },
+    {
+      "path": "tests/test_chromosome_sampling.py",
+      "sha256": "d8d955fca7943b9d5b1f418333cbf2ef68b1085f39a45dbfd92af194401615da",
+      "bytes": 3516
+    },
+    {
+      "path": "tests/test_chromosome_segregation_class.py",
+      "sha256": "dc1e4f031db69a43982414d2d19f74b045369f65fd5287dccc146fffb51d115a",
+      "bytes": 4871
+    },
+    {
+      "path": "tests/test_chromosome_sequence.py",
+      "sha256": "073572c56cb6136ea579e5d7e817176b8e758c342a639ce844c568ca700479c0",
+      "bytes": 5430
+    },
+    {
+      "path": "tests/test_chromosome_synthesis_updates.py",
+      "sha256": "a4056e4a32276bc9decd754cae96645655f3b8460c99058d4876373a11cb2d21",
+      "bytes": 3363
+    },
+    {
+      "path": "tests/test_circular_sparsemat.py",
+      "sha256": "bb8c2386b16c834fe19b76eeae66c738932d96f3220109111ad9a4807b6c127c",
+      "bytes": 5198
+    },
+    {
+      "path": "tests/test_compartment_constant.py",
+      "sha256": "1945572b63f8a75ada864520957afea08078bd6cb290280409e04b23d361dab5",
+      "bytes": 1116
+    },
+    {
+      "path": "tests/test_computation.py",
+      "sha256": "e6b6a148ebacdc195c976337060783202889cc09789936c92116528f1fed57a4",
+      "bytes": 323
+    },
+    {
+      "path": "tests/test_cytokinesis_process.py",
+      "sha256": "a3bd21885cfea9ed24ff8f4a582f0185889786d2cec7f39eb2d9ee0ff589eb74",
+      "bytes": 5293
+    },
+    {
+      "path": "tests/test_damage_selection_order.py",
+      "sha256": "8d38b68ad8073ab0ae0a3d6bedc70ad2f861676a5dffbc582946f3b810ab09bd",
+      "bytes": 1821
+    },
+    {
+      "path": "tests/test_dna_damage.py",
+      "sha256": "deaeb5e7706bae9702ba43b1b0e46e76e5be589932575838ea5255270ac60a74",
+      "bytes": 7633
+    },
+    {
+      "path": "tests/test_dna_repair.py",
+      "sha256": "1c6f9741c5854addb7498b7c13dd72e4c6335ec9a14af05e4ff9ca1562458525",
+      "bytes": 7378
+    },
+    {
+      "path": "tests/test_dna_repair_ber_indexing.py",
+      "sha256": "c8ea0c20acb724e15919b6ba2e6c20bd3f90fd2a56fda44367abb76210f03f1e",
+      "bytes": 3917
+    },
+    {
+      "path": "tests/test_dna_repair_ligation.py",
+      "sha256": "e786d6bd09b5007cf04bab00f7d3d329e93175729d46eb406320992c2b8878cf",
+      "bytes": 1129
+    },
+    {
+      "path": "tests/test_dna_supercoiling.py",
+      "sha256": "03d7c0848326b977be1566006a1d8dce5f477eafc793023ad136dce044b40a74",
+      "bytes": 10387
+    },
+    {
+      "path": "tests/test_fresh_initialization.py",
+      "sha256": "e4067f06aabc10ad85b98ed221aeaae6c4aa9a8c654e0f37357bacf8029cb02e",
+      "bytes": 4804
+    },
+    {
+      "path": "tests/test_ftsz_polymerization.py",
+      "sha256": "3b7203b34e80f6eea8411376bf515a3eff0155b2aad254775b0a64a477fda51d",
+      "bytes": 1962
+    },
+    {
+      "path": "tests/test_ftsz_process_init.py",
+      "sha256": "5466f8a9b370e910fa63a59a01b5ef655ba24c5efb20a7a535f31de331f828cb",
+      "bytes": 665
+    },
+    {
+      "path": "tests/test_ftsz_ring_state.py",
+      "sha256": "c69fb433bd354bd06a4e24ba55e98d4b1d1debe4084256c9f84356d9bc0eb0bf",
+      "bytes": 1941
+    },
+    {
+      "path": "tests/test_gene_constant.py",
+      "sha256": "a425e462438bd06a538f34e8650837429db85b9a846d3eb7a02d5b2f2f6c6d47",
+      "bytes": 1158
+    },
+    {
+      "path": "tests/test_geometry_state.py",
+      "sha256": "e84edb7d88c7bf67fdd2f8b0e1228b0e81a6265c674d808fafc351735a61e124",
+      "bytes": 2348
+    },
+    {
+      "path": "tests/test_host_interaction.py",
+      "sha256": "fa1e7b7834903036ffe5b18a580aeeba9b1c9fdfe0a8391fed55c0de5c457ca2",
+      "bytes": 1978
+    },
+    {
+      "path": "tests/test_host_state.py",
+      "sha256": "171d777925742958c0b60348cf9febbd8a73324d3fd76959fbdf3d3cc4da8217",
+      "bytes": 1420
+    },
+    {
+      "path": "tests/test_kb_audit.py",
+      "sha256": "06ea4c3f97b9ef2c80af39913d12c1ea5519346592dd692704c0ad677980cc9a",
+      "bytes": 1421
+    },
+    {
+      "path": "tests/test_loader.py",
+      "sha256": "220a10e43c9b4fbbb33faba6228f6e6ec8aea0fd96d42257a3161a00665be6a6",
+      "bytes": 1148
+    },
+    {
+      "path": "tests/test_macromolecular_complexation.py",
+      "sha256": "4a2592910b3b577d6f0c54dc9b10898fcbf5ec52e4853991df79672f9012e60f",
+      "bytes": 5975
+    },
+    {
+      "path": "tests/test_mass_state.py",
+      "sha256": "5aa777880d1a8180be8842a8c0d68f0a2f40a00bfc938fddab8f40ba6eba9444",
+      "bytes": 2502
+    },
+    {
+      "path": "tests/test_metabolic_reaction_state.py",
+      "sha256": "7e74260ed817a3751af298f10e09db84e6585c9b421904859f072ca7054bf389",
+      "bytes": 1927
+    },
+    {
+      "path": "tests/test_metabolism_fba.py",
+      "sha256": "0d64852f2adf95bd26fc9f38a506a2872a2bb8e500225b095a2b51993eee6269",
+      "bytes": 1459
+    },
+    {
+      "path": "tests/test_metabolism_fit_sparse.py",
+      "sha256": "117d097e0360e94333e25672a9e66ae7b4cf234631a6c50cef5d5ed2001b387b",
+      "bytes": 2965
+    },
+    {
+      "path": "tests/test_metabolism_fitting.py",
+      "sha256": "fb96864096f8033922a18122141d7607c61ec56e3d883e4a906948d01ffa2dd9",
+      "bytes": 4538
+    },
+    {
+      "path": "tests/test_metabolism_lifecycle.py",
+      "sha256": "c6f5b93c259fa0f9b0dbe21f181d45f4abf5b21d70e81e2ea64e506906d2bfa0",
+      "bytes": 4295
+    },
+    {
+      "path": "tests/test_metabolism_process.py",
+      "sha256": "c026a83867c3efc1380eafc052ac4af812cf3097e4e8ae1561d78d7958269675",
+      "bytes": 9334
+    },
+    {
+      "path": "tests/test_metabolite_state.py",
+      "sha256": "46a728564be1662e8af05d648374b3ac57e11372559879cbea86c8fe2c8ad472",
+      "bytes": 4749
+    },
+    {
+      "path": "tests/test_molecule_count_state.py",
+      "sha256": "32f1c398327f9991a0c094ca20da7ed46535ce9eb728c6e471aa6c18fcb67695",
+      "bytes": 4418
+    },
+    {
+      "path": "tests/test_polymerize.py",
+      "sha256": "fc20e8157943b8a4b2ac4f9b1edbe5aecd35feb44843e9f2e59d96a5c093bd89",
+      "bytes": 1851
+    },
+    {
+      "path": "tests/test_polypeptide_state.py",
+      "sha256": "cc05b26d319f446f855edc86964d2b608a23d2b3775580d821c2d7715933bfa3",
+      "bytes": 6282
+    },
+    {
+      "path": "tests/test_process_base.py",
+      "sha256": "8350dc5e01bcaad2dc76dcaf912c3833e32fdb22263e3fb54724a64e52103e0a",
+      "bytes": 3155
+    },
+    {
+      "path": "tests/test_process_initialization.py",
+      "sha256": "2737f0c6c55130ebdf988b45efce0bab7d7487b82840514c83f796775e3f747e",
+      "bytes": 6249
+    },
+    {
+      "path": "tests/test_process_kb_initialization.py",
+      "sha256": "b445f62b73a70de4befd4183ef65c42a802ff0774a21d62a4e3f4866fc2a9143",
+      "bytes": 11610
+    },
+    {
+      "path": "tests/test_processes.py",
+      "sha256": "1bcc6062fe08b8d9f501d1270a7240a710b6551d6c33096948cc602aa88e8ee2",
+      "bytes": 3544
+    },
+    {
+      "path": "tests/test_protein_activation_class.py",
+      "sha256": "5a870546ce81249752a43b4b551327e20ea5c90426142c4ba5a46a98520104c3",
+      "bytes": 5650
+    },
+    {
+      "path": "tests/test_protein_complex_state.py",
+      "sha256": "23005f80a88a983a50d0152e5667135b07bb86b3736129ad59333c77f0c8173d",
+      "bytes": 6113
+    },
+    {
+      "path": "tests/test_protein_decay.py",
+      "sha256": "d61b8d7ac253813d26525ad10d70ded13074803f2897fc04bf7ba49f6e648747",
+      "bytes": 9466
+    },
+    {
+      "path": "tests/test_protein_folding.py",
+      "sha256": "dba4f099b4ee58248ba1f9c9f4a0dff1d83a39b065c2a4f46fd79bb9ac5e401c",
+      "bytes": 3816
+    },
+    {
+      "path": "tests/test_protein_kb_initialization.py",
+      "sha256": "47f01c0d1b2d6978654936d754b685b1e92d92d305b78d960f93857ff35443cb",
+      "bytes": 4744
+    },
+    {
+      "path": "tests/test_protein_modification.py",
+      "sha256": "bccc8b3343fe3cb444b15ab4fb456908398888bb52df89572f09cd37d22ca30b",
+      "bytes": 3086
+    },
+    {
+      "path": "tests/test_protein_monomer_state.py",
+      "sha256": "b3e2e211aea49ca0b754d16f58ee339fa33f07b1b17d707283531768292aba03",
+      "bytes": 6077
+    },
+    {
+      "path": "tests/test_protein_processing_i.py",
+      "sha256": "87156c223e2fabbad12b3b2a5e4995c57d868b969631ce3beffaaf8b992ac4ae",
+      "bytes": 2242
+    },
+    {
+      "path": "tests/test_protein_processing_ii.py",
+      "sha256": "a0f9107cabaab74e7684f92b76cd47c924a4e8ae3a5668e7495518b8e2c3b862",
+      "bytes": 3447
+    },
+    {
+      "path": "tests/test_protein_translocation.py",
+      "sha256": "856451cb48e8abec6844bcf33cc6c383fc59e582ec0671989f24f8a52fa745b6",
+      "bytes": 2248
+    },
+    {
+      "path": "tests/test_randstream.py",
+      "sha256": "36c8ac3eaa002b2f223d4408b791b012ee6488eaa28b9c885a860d00d6b8c23e",
+      "bytes": 4251
+    },
+    {
+      "path": "tests/test_reaction_process_init.py",
+      "sha256": "a242e61898ad42e6263cb523552148b902ed508d7f667b00d858106f08bbda0c",
+      "bytes": 8258
+    },
+    {
+      "path": "tests/test_replication_initiation.py",
+      "sha256": "fec36cc0a09908add0512e6a98ee6882e39d641011251a24e71d44e263471ce3",
+      "bytes": 12732
+    },
+    {
+      "path": "tests/test_replication_sequence_budget.py",
+      "sha256": "efdde4e5029c1451d5e37f5b6b0b6604b165bd586957cc09aad54acbe456bf41",
+      "bytes": 2705
+    },
+    {
+      "path": "tests/test_replication_termination.py",
+      "sha256": "2577cabb9159844b8a9b47efe82090e1424adf78e80e72757943b30f9cb83ef6",
+      "bytes": 4664
+    },
+    {
+      "path": "tests/test_ribosome_assembly_process.py",
+      "sha256": "d72a333e5419a390060bddc365a3435a51afd8f90733b29f2812f7d02de9157a",
+      "bytes": 5239
+    },
+    {
+      "path": "tests/test_ribosome_state.py",
+      "sha256": "77a6000045922014717d2c248953f7f683633dab1d30ad102df6bf4036941e02",
+      "bytes": 3766
+    },
+    {
+      "path": "tests/test_rna_decay.py",
+      "sha256": "93f27e9e3f64d8224c64638411a545e28c45919314eadc757d875e14f7bc4f40",
+      "bytes": 3120
+    },
+    {
+      "path": "tests/test_rna_modification.py",
+      "sha256": "5441c3d7ac4c90e2e07c859752b8bd0f260d7f0cb1e061df7f1b2c745b677b9c",
+      "bytes": 2940
+    },
+    {
+      "path": "tests/test_rna_polymerase_state.py",
+      "sha256": "5e1349cf54790b7017204220c3b79c712df8fb24afdd33358ca30779a37cf469",
+      "bytes": 3164
+    },
+    {
+      "path": "tests/test_rna_processing.py",
+      "sha256": "67b2e7bb036eb7fb55ccc0b3bfcb99bac64ce008bcf000a71aac90883c01575d",
+      "bytes": 1857
+    },
+    {
+      "path": "tests/test_rna_state.py",
+      "sha256": "a40a0489c827db4ce0c28260d478b6a213a63a51bcbc60e6070ee018f870f8e5",
+      "bytes": 5837
+    },
+    {
+      "path": "tests/test_runner_context_cache.py",
+      "sha256": "69a1027a44d5e7402315a6b401a6d325f16cb935a1772b973f303932149e030f",
+      "bytes": 2518
+    },
+    {
+      "path": "tests/test_side_effect_item.py",
+      "sha256": "6ded99f2e0f5ff78645b10b51dfd7af8a57052125b59580c196f310b9d62b441",
+      "bytes": 2978
+    },
+    {
+      "path": "tests/test_simulation.py",
+      "sha256": "8db0db18cd4b3207b3f14af914c41564fe7fe891b93f48d1d9991d5f429eea7a",
+      "bytes": 6237
+    },
+    {
+      "path": "tests/test_snapshot.py",
+      "sha256": "a1932b3852751c9d39ca9c26e94fd7e6c9bbe56bd9254a1fff9c868c398af278",
+      "bytes": 7555
+    },
+    {
+      "path": "tests/test_solvers.py",
+      "sha256": "bf73803596f2ca4e5855b90d71ca987e0757a5e400474c8121d3dcbdb2330575",
+      "bytes": 7231
+    },
+    {
+      "path": "tests/test_sparsemat.py",
+      "sha256": "cee4c7c5649299a9bb36fbc46c73a897c34785115d7b3b85a3571180b6dfc3a4",
+      "bytes": 7607
+    },
+    {
+      "path": "tests/test_state_id_matrix_order.py",
+      "sha256": "e84040afbc67849b9e7bf70b07705dc6353e41edf540a5df1b08f56905a2ff37",
+      "bytes": 719
+    },
+    {
+      "path": "tests/test_state_source_edge_cases.py",
+      "sha256": "452936af3c444643c0589966814e4ed9603d742e3c3b353d3eefa8bad0723e5a",
+      "bytes": 2906
+    },
+    {
+      "path": "tests/test_stimulus_state.py",
+      "sha256": "f6421d446d2983a2522160acfcfcd0ed387ade5b718fac48053926d4ba2e5ac0",
+      "bytes": 3566
+    },
+    {
+      "path": "tests/test_terminal_organelle_assembly.py",
+      "sha256": "bd1d0e3d40b63feb133f03d514bc13149aac01e0483d1e6396e56a9da7e12593",
+      "bytes": 2197
+    },
+    {
+      "path": "tests/test_time_state.py",
+      "sha256": "db6a7532a55bea51f101aceedc9f4f699c3dd8767ae10a22038336de2120d5a9",
+      "bytes": 1642
+    },
+    {
+      "path": "tests/test_transcript_state.py",
+      "sha256": "7f03b64c724ade1eccdb0257a21695b252ba5049fa0027cdc900d5b9e271ba76",
+      "bytes": 2117
+    },
+    {
+      "path": "tests/test_transcription_process.py",
+      "sha256": "75c10b8bd10d9f48d73156fead4a50e8c908fea42402bb4edf54e07d441f8d81",
+      "bytes": 13050
+    },
+    {
+      "path": "tests/test_transcriptional_regulation.py",
+      "sha256": "c330bcf4d8e52050c46832596d05a9541f5ea707d2a10290863bf666c7e95491",
+      "bytes": 4803
+    },
+    {
+      "path": "tests/test_translation_process.py",
+      "sha256": "b125b49cdea314905266a36576b2f2f8a9b54c70cc373f4b4fa6a760e74954e9",
+      "bytes": 9411
+    },
+    {
+      "path": "tests/test_trna_aminoacylation.py",
+      "sha256": "3c2035d6f580396337de6c93fe89b771e18f58182657466d61d32ac1f8223e5d",
+      "bytes": 11098
+    },
+    {
+      "path": "validation/audit/round2_combined.json",
+      "sha256": "cf0c3db024a24dba9b873b39f2cb9f6d11c5af2a4d684e344f5e4745ae4b425a",
+      "bytes": 1214521
+    },
+    {
+      "path": "validation/audit/round2_coverage.json",
+      "sha256": "9988d2bced261e170bc8aa54faa3a3f77675be03a7878465c9c8878d37a47e19",
+      "bytes": 1354
+    },
+    {
+      "path": "validation/audit/round2_sparse.json",
+      "sha256": "b90450db8b52178f62440184e2f0bd6875538eac833eba1f00050946cf267147",
+      "bytes": 150247
+    },
+    {
+      "path": "validation/fixed-cohort/README.md",
+      "sha256": "da38179b91f27b5d5f1f2bccd82c02937e1efc31fd7316e6572eee3c8ec0f992",
+      "bytes": 2671
+    },
+    {
+      "path": "validation/fixed-cohort/animation-verification.json",
+      "sha256": "e8a7c8b8084be5951abac9d6b653da3f981c25896e2d7dffb1f428a583f166e2",
+      "bytes": 340
+    },
+    {
+      "path": "validation/fixed-cohort/bias-tests.json",
+      "sha256": "40e1e629953120f1808e4370b0cb3c0f344a69861757efe037486f7490c43481",
+      "bytes": 3167
+    },
+    {
+      "path": "validation/fixed-cohort/chromosome_seed101_division.json",
+      "sha256": "8b37b29a2c842d097fcf752b0ba1d6b716cec7c180a0a5f3cbd13929718d0c99",
+      "bytes": 22186
+    },
+    {
+      "path": "validation/fixed-cohort/chromosome_t60.json",
+      "sha256": "23c12f7f392353942192c9ad28083e9c78cd8e8d0e3794ba0204706fd45cfa69",
+      "bytes": 20382
+    },
+    {
+      "path": "validation/fixed-cohort/cycle-events.json",
+      "sha256": "4917a083d526f7f1551890c36890a3e40b0255ef010c14816f07756a26f9cbaa",
+      "bytes": 9234
+    },
+    {
+      "path": "validation/fixed-cohort/discrimination.json",
+      "sha256": "1fe1c0fde3ba0d2069cd17b282171bbf6d67243734cece69e440da524c99d4c1",
+      "bytes": 10362
+    },
+    {
+      "path": "validation/fixed-cohort/division_times.csv",
+      "sha256": "c63943a3642407cc5568741faa05f3907ad06977fc92ad90c3c4cb6c1277b97d",
+      "bytes": 944
+    },
+    {
+      "path": "validation/fixed-cohort/presentation-trajectories.npz",
+      "sha256": "dc863ca09265eab1c3e56fbd417ce76310b15a3403646976a141c81c47e26051",
+      "bytes": 332928
+    },
+    {
+      "path": "validation/fixed-cohort/presentation-verification.json",
+      "sha256": "f92df669103d81b31fb0b4093cf92c753b5f3279365424ee08c788949dea5710",
+      "bytes": 2050
+    },
+    {
+      "path": "validation/fixed-cohort/provenance.json",
+      "sha256": "a505e3c129eb73fc5d0f0d0957aabd9892a5f467e607ddf57bd761a0eed6b3a9",
+      "bytes": 12135
+    },
+    {
+      "path": "validation/fixed-cohort/reproduction-check.json",
+      "sha256": "3fbcb4b42212da93d875a3fdd717a66f5e995f85e57b3b375c62ab6e93ca2f0a",
+      "bytes": 761
+    },
+    {
+      "path": "validation/fixed-cohort/summary.json",
+      "sha256": "6ce555b4209719d96a4fad767732f3b10feee0826c6a2abd6d67c0a28f07b8a9",
+      "bytes": 16417
+    },
+    {
+      "path": "validation/fixed-cohort/time_matched_statistics.csv",
+      "sha256": "d7df32d9adf31323a366b782d9ccb6053ee20081341bffe4e5a085c8bbc89710",
+      "bytes": 777709
+    },
+    {
+      "path": "validation/fixed-cohort/trajectories.npz",
+      "sha256": "05a1c6adb1d5bd02c98a9c8c12be63be6f2dc2c38ce450e6ecdb901a672a13a3",
+      "bytes": 598673
+    },
+    {
+      "path": "validation/initialization-verification.json",
+      "sha256": "7947be767ee0480c5032d0f79dbcc3e12abeba44233c8bb36ac8ba5a4a27a5c7",
+      "bytes": 2389
+    },
+    {
+      "path": "validation/provisional/README.md",
+      "sha256": "87eb351484b7c50c9e8832e65a59a9bd039267f587241bc6d3c7345d91650f25",
+      "bytes": 1566
+    },
+    {
+      "path": "validation/provisional/discrimination.json",
+      "sha256": "c035bab3b7d3059b526fd1d44d10c575b11877f940829a45604af00c8c79e5d4",
+      "bytes": 10373
+    },
+    {
+      "path": "validation/provisional/division_times.csv",
+      "sha256": "d92688a55ba3278659a53c293430dde88fbff77ed623247d24c85a839c223115",
+      "bytes": 908
+    },
+    {
+      "path": "validation/provisional/provenance.json",
+      "sha256": "a5889b40e30b405bf7e59ad06716df8f6ee36538a87580d04b06e8c96528c0cd",
+      "bytes": 27469
+    },
+    {
+      "path": "validation/provisional/summary.json",
+      "sha256": "a432e74987291a4fe4fbcaa4f34c8036725a4ccaee2599b4aca738ffcecda76a",
+      "bytes": 16332
+    },
+    {
+      "path": "validation/provisional/time_matched_statistics.csv",
+      "sha256": "50d72a0d3de578e44141a53ce529f15a900ac4599f42ad9e2e76ab451bb92cb1",
+      "bytes": 744318
+    },
+    {
+      "path": "validation/provisional/trajectories.npz",
+      "sha256": "32eb62248745f97ce755d8c210c38b72da0d64e7ac549731d2c78808b884bbf4",
+      "bytes": 439273
+    },
+    {
+      "path": "validation/source-manifest.json",
+      "sha256": "8c61c08d9a65cff5065dd4c1a393b12327792ad4c24524cbbc36d4b1f92da88a",
+      "bytes": 10996
+    },
+    {
+      "path": "validation/ubuntu-full-cycle-timing.json",
+      "sha256": "6a44e5c92fb0a3a2c7ef8864ebd799c69fc4bed142885bc19030510d84f08bce",
+      "bytes": 7904
+    },
+    {
+      "path": "vendor/diagnostic/README.md",
+      "sha256": "da8885f8a5a73227d29f13c4e268037925d8cefe8bc36a56ee458626003b18e0",
+      "bytes": 1057
+    },
+    {
+      "path": "vendor/diagnostic/glpk444_text.c",
+      "sha256": "493bc6dd184a3fb4d9ecc88f2628622865c48238a945566d4b511c8a526c70e1",
+      "bytes": 5293
+    },
+    {
+      "path": "vendor/glpk-4.44.tar.gz",
+      "sha256": "289a4366041ee7360b5523dbfdcb083487743357b96529e4af2477a65a3c7e6d",
+      "bytes": 3229434
+    },
+    {
+      "path": "wholecell_py/__init__.py",
+      "sha256": "2845eb6a19aef2d3883c969d2944f531c1b1390ca86de1adaed2692bc4e6e72c",
+      "bytes": 41
+    },
+    {
+      "path": "wholecell_py/checkpoint.py",
+      "sha256": "3609d6325d982f0e976f6df352fd6184b3ebf1c91e6b0bc2ba9a9611948dc675",
+      "bytes": 2326
+    },
+    {
+      "path": "wholecell_py/chromosome_process_aspect.py",
+      "sha256": "74d09d464b58832443440e3791736e98e9b0068daa402933ca38e30e71c9ff38",
+      "bytes": 14442
+    },
+    {
+      "path": "wholecell_py/chromosome_sequence.py",
+      "sha256": "0403ad939d84dcee29a6f5cfb84f820623ce7d5511c41ad46d4bb36f6a40791f",
+      "bytes": 12215
+    },
+    {
+      "path": "wholecell_py/circular_sparsemat.py",
+      "sha256": "b529d9a55b0f994150de02aa00a2632e55819bffa6c625ba79ee6b16ad56099f",
+      "bytes": 10773
+    },
+    {
+      "path": "wholecell_py/compare.py",
+      "sha256": "36b9788e4aec665d400e7abb1104c7dc2f6698a3a4f4057aff6f3a2617b640e2",
+      "bytes": 11545
+    },
+    {
+      "path": "wholecell_py/compartment.py",
+      "sha256": "cd9258d68bfc8dd225ccc59773763ec3cc12c3f12ece13800a821fb99cb09a09",
+      "bytes": 3210
+    },
+    {
+      "path": "wholecell_py/computation.py",
+      "sha256": "b40bc82f73a59e50bfd795d934c2eb239a09b61027d1714aa0d7255f0ecfe9ec",
+      "bytes": 294
+    },
+    {
+      "path": "wholecell_py/core.py",
+      "sha256": "1f4a13efb9dfe2353b4c058770251ab222f67c7046e94b7c7b1a13129588179f",
+      "bytes": 2790
+    },
+    {
+      "path": "wholecell_py/gene.py",
+      "sha256": "a687b363b75f8484582b464d5906e401b2aaa0b44bfffcdf214838bf8909581e",
+      "bytes": 4131
+    },
+    {
+      "path": "wholecell_py/initialization.py",
+      "sha256": "a392626dd4c5a8cd5a21e9fa52043af4964831858ef04410675bffff7122ae80",
+      "bytes": 16221
+    },
+    {
+      "path": "wholecell_py/kb_audit.py",
+      "sha256": "7ff6b4ebe4dbf3de76af3982cc5f289dd0b6a21a7bbafee022e43fbff83e24e3",
+      "bytes": 4015
+    },
+    {
+      "path": "wholecell_py/kb_parameters.py",
+      "sha256": "0c5e330985be41858ea2338c46e55ceaf7460713d9ba2b44414ed8aa6ed4aec6",
+      "bytes": 1510
+    },
+    {
+      "path": "wholecell_py/loader.py",
+      "sha256": "7c2c75e6026ad0285292962416bf6efe3688c03f8a2cb5a782e72c540067991a",
+      "bytes": 2790
+    },
+    {
+      "path": "wholecell_py/molecule_count_state.py",
+      "sha256": "86f95bc131d6381974fba7898b9a91763f6303e176816c65a66b0f4ccebac850",
+      "bytes": 7112
+    },
+    {
+      "path": "wholecell_py/polymerize.py",
+      "sha256": "03ed6bc8218340f37d405b58449f83ffa620aa703c212c5cfa2cde0b2a5008ba",
+      "bytes": 4602
+    },
+    {
+      "path": "wholecell_py/process_base.py",
+      "sha256": "fe0efaa1fb175226c9be941121e54568f5d0740330d43bee929bfd158458fecc",
+      "bytes": 29326
+    },
+    {
+      "path": "wholecell_py/processes/__init__.py",
+      "sha256": "1a9ec1cb749ea808f45a1e862c32671f146f98af6646500ac4d8f4263fa107c3",
+      "bytes": 53
+    },
+    {
+      "path": "wholecell_py/processes/chromosome_condensation.py",
+      "sha256": "f84ee79957581429d3505e64f5c37d49ef03332336de78593ab91cf641ee2453",
+      "bytes": 9468
+    },
+    {
+      "path": "wholecell_py/processes/chromosome_segregation.py",
+      "sha256": "66edf8b63d20fe36d1681c9d0a3d8ee8e22d8af20fcaa637b6f7d20ec148e810",
+      "bytes": 7754
+    },
+    {
+      "path": "wholecell_py/processes/cytokinesis.py",
+      "sha256": "d509093cbf3bf018fc90e2216087cd9a691058df7a96631a50613e607cc6a137",
+      "bytes": 9758
+    },
+    {
+      "path": "wholecell_py/processes/dna_damage.py",
+      "sha256": "99901cdd905e85c30ea5e72a30f833cfaaba2013cc0ee600a2984149a1e10a1c",
+      "bytes": 23203
+    },
+    {
+      "path": "wholecell_py/processes/dna_repair.py",
+      "sha256": "7759f6fce69e999353885bafbdd9f46e1eb71c907d9318cb4f9b65e22469fba5",
+      "bytes": 83229
+    },
+    {
+      "path": "wholecell_py/processes/dna_supercoiling.py",
+      "sha256": "490b307e4411461780cc14c7fa6cb4fb400a5af405c51cddb1a2ae26d991c25f",
+      "bytes": 21753
+    },
+    {
+      "path": "wholecell_py/processes/ftsz_polymerization.py",
+      "sha256": "6c6f079217c24575044bf74e21eaddb512d8c6b00ca95c51beef008466c63c91",
+      "bytes": 12155
+    },
+    {
+      "path": "wholecell_py/processes/host_interaction.py",
+      "sha256": "56eadc239f5d3b89f1c8e99fdd42de194e66a329cc18d0c34876366a82a1b812",
+      "bytes": 4468
+    },
+    {
+      "path": "wholecell_py/processes/macromolecular_complexation.py",
+      "sha256": "ee4df0fb80f149349605d50c0e304dfb6aa409d9be6b3723db836db267a23ac4",
+      "bytes": 17575
+    },
+    {
+      "path": "wholecell_py/processes/metabolism.py",
+      "sha256": "3c58175f5dd9c491e8b635a677f817fd2a362926527c77f04f85b4874896e575",
+      "bytes": 22826
+    },
+    {
+      "path": "wholecell_py/processes/metabolism_fba.py",
+      "sha256": "10872b55db541769742cdbd579b855283251f86c259cbbb0e7f0424bd9a84c3d",
+      "bytes": 11548
+    },
+    {
+      "path": "wholecell_py/processes/metabolism_fit_sparse.py",
+      "sha256": "aa0f3d646ca0a362d24db0a8c46d1e199b6398c7f4a4bef68a7b484c8edc6109",
+      "bytes": 4341
+    },
+    {
+      "path": "wholecell_py/processes/metabolism_fitting.py",
+      "sha256": "3dd1661b5a9542aeb582967cabf55744020e212b3334f14cd9ee6043e69cece2",
+      "bytes": 12144
+    },
+    {
+      "path": "wholecell_py/processes/protein_activation.py",
+      "sha256": "e4546116abaa9c29b1b29a753dc3c3ec4d271cb45cc579513edd0153b9209aab",
+      "bytes": 17795
+    },
+    {
+      "path": "wholecell_py/processes/protein_decay.py",
+      "sha256": "66388895e3d6ddd57423de2f0752e59397e8f39a8952becee0250402cafb32b5",
+      "bytes": 40263
+    },
+    {
+      "path": "wholecell_py/processes/protein_folding.py",
+      "sha256": "0ffb97e8b785b86e5d978e6ec4f3a4010a7b8cbf6b4a554f9aeea8a000862970",
+      "bytes": 19593
+    },
+    {
+      "path": "wholecell_py/processes/protein_modification.py",
+      "sha256": "f630a67c6c6d900caf44dd96e8a3c316d015fbca1e2a10d19de9d72b346cc122",
+      "bytes": 14408
+    },
+    {
+      "path": "wholecell_py/processes/protein_processing_i.py",
+      "sha256": "618e0ca3e59a998b3257f59c8c787b0232703c2bc52eac1de72a72dea9b2eef3",
+      "bytes": 10803
+    },
+    {
+      "path": "wholecell_py/processes/protein_processing_ii.py",
+      "sha256": "2a7e63e592c208a333ff7ef3b41a64d0bd03b36daf897af6adad5d77663945e3",
+      "bytes": 15114
+    },
+    {
+      "path": "wholecell_py/processes/protein_translocation.py",
+      "sha256": "d801803493e80c27e8619c77c73bccbcb200e09f63aa7172539b5d6db1acebbe",
+      "bytes": 11201
+    },
+    {
+      "path": "wholecell_py/processes/replication.py",
+      "sha256": "4e1de826eec530bdb0232130ce73952776d1bb2717352bc7e338b4ac5fff5727",
+      "bytes": 7341
+    },
+    {
+      "path": "wholecell_py/processes/replication_initiation.py",
+      "sha256": "8a9d97ef30c53b929cd0bfbba702b74045fb77c60ae50f765b5d44ca3d29002b",
+      "bytes": 32297
+    },
+    {
+      "path": "wholecell_py/processes/replication_updates.py",
+      "sha256": "4ba425a32f1c8f5eff478064b93f950bda35673834d72028a950246d471d9d69",
+      "bytes": 34739
+    },
+    {
+      "path": "wholecell_py/processes/replication_views.py",
+      "sha256": "378ec753a4998d89816cfebebff8a8289fea9d520e20c4d79fc82f47e08afb3f",
+      "bytes": 16248
+    },
+    {
+      "path": "wholecell_py/processes/ribosome_assembly.py",
+      "sha256": "576be14a614e485332eaf00dacafbeab27054ee627dc2cc69017bff0421092f3",
+      "bytes": 16890
+    },
+    {
+      "path": "wholecell_py/processes/rna_decay.py",
+      "sha256": "742fb5dd2b79c5eb53a0578e8358946375629f2e6a13248161b3a6809add4c95",
+      "bytes": 14985
+    },
+    {
+      "path": "wholecell_py/processes/rna_modification.py",
+      "sha256": "7d46d7d1f079703390673c871419610d0d009b8b525c27580d076ca6754ce55c",
+      "bytes": 13602
+    },
+    {
+      "path": "wholecell_py/processes/rna_processing.py",
+      "sha256": "f52022bdf5bf58b2757778cde39a913ecae41326e1a7ba374ae722b98dbf7401",
+      "bytes": 12926
+    },
+    {
+      "path": "wholecell_py/processes/terminal_organelle_assembly.py",
+      "sha256": "8e5be845f5069206ae04d3838e23d20595821d05de44cc2ef6eca3d64c12ea96",
+      "bytes": 10285
+    },
+    {
+      "path": "wholecell_py/processes/transcription.py",
+      "sha256": "cc0696e2edb999f97d679589672244ad73c24f3d8042ae6669c6ee3da57d02a3",
+      "bytes": 40811
+    },
+    {
+      "path": "wholecell_py/processes/transcriptional_regulation.py",
+      "sha256": "64c309426e88e25551a6f379f87e664e613c21931494dd82206b486bedc033ea",
+      "bytes": 14137
+    },
+    {
+      "path": "wholecell_py/processes/translation.py",
+      "sha256": "ebfe20aae018af0d930663a9c8987996d67cafb4fc108eaf8f377094b156ad2b",
+      "bytes": 33057
+    },
+    {
+      "path": "wholecell_py/processes/trna_aminoacylation.py",
+      "sha256": "c65f953ce0e4b05104a89631683110fbeae772986564fb8c6ff6162c02e4338a",
+      "bytes": 19112
+    },
+    {
+      "path": "wholecell_py/randstream.py",
+      "sha256": "d9f334751ee9558bcc80d655383710173d0160a5742197de384354c3729f086b",
+      "bytes": 12167
+    },
+    {
+      "path": "wholecell_py/reaction_process.py",
+      "sha256": "d741345795003d6e1d64efa25e62c883b7031de513414d0105ab28f68308c8fd",
+      "bytes": 15373
+    },
+    {
+      "path": "wholecell_py/runner.py",
+      "sha256": "a544159048d16071d9646b01ab1e3078884be9f7f1705207f69ae415517aed0e",
+      "bytes": 10592
+    },
+    {
+      "path": "wholecell_py/runtime_registry.py",
+      "sha256": "dd9ae99884d5ba519ca81d6032b689df2aacbd3b8b8ba4d7f7ccfccbad64fbc3",
+      "bytes": 3395
+    },
+    {
+      "path": "wholecell_py/side_effect.py",
+      "sha256": "2032d8d02781e75a60c85c098413ccc59d658188c076785e50e6f539a93be758",
+      "bytes": 1322
+    },
+    {
+      "path": "wholecell_py/side_effect_item.py",
+      "sha256": "b8fd11c4d85dfa07936b79611a5c58608e0c4a23e1e3816202bc18e81443edde",
+      "bytes": 3290
+    },
+    {
+      "path": "wholecell_py/simulation.py",
+      "sha256": "ae49f7d0fe474852aad7dc3052f2c02a337d4f2323ce851b256a767af6f13685",
+      "bytes": 9881
+    },
+    {
+      "path": "wholecell_py/snapshot.py",
+      "sha256": "0b73956b808a6924764e813f6b66ff35bef0deb7a2cda9fcb10ea2745548f57f",
+      "bytes": 12995
+    },
+    {
+      "path": "wholecell_py/solvers.py",
+      "sha256": "8265c8ddb097653efe09235d4dabdf416ad0f105163d49cf24e59afa9e998a79",
+      "bytes": 18914
+    },
+    {
+      "path": "wholecell_py/sparsemat.py",
+      "sha256": "05a3f82604507f33fb7a969c5ad8e817712617a1d394f996aa5b44d636a0596a",
+      "bytes": 24516
+    },
+    {
+      "path": "wholecell_py/states/__init__.py",
+      "sha256": "2c08c02380d1cb0aab91faddbc53e09b8826ae4f15fd4559dab199bf9ff8b2f2",
+      "bytes": 76
+    },
+    {
+      "path": "wholecell_py/states/chromosome.py",
+      "sha256": "3ddbc0d138e2ccc38e9ad1be1a38cb08bae1c658c7538b28d820cefd070eed7d",
+      "bytes": 8501
+    },
+    {
+      "path": "wholecell_py/states/chromosome_accessibility.py",
+      "sha256": "3e2d7c4e28b276234442956719216fc172fb824f355193776bee59258bbf6792",
+      "bytes": 17049
+    },
+    {
+      "path": "wholecell_py/states/chromosome_binding_creation.py",
+      "sha256": "274ef4f658987f0fdedd4ad79b4e18641c63771b7505e6f14122bca5fd9ea0be",
+      "bytes": 9024
+    },
+    {
+      "path": "wholecell_py/states/chromosome_binding_updates.py",
+      "sha256": "b3fe38bf549ccfa090386c79934a2328534a32cecea8e71671483a8a74bf8252",
+      "bytes": 10299
+    },
+    {
+      "path": "wholecell_py/states/chromosome_breaks.py",
+      "sha256": "e5675eb0b6e83cac1940097578d6670af9ac1839aacb446d911b50085cef538d",
+      "bytes": 10498
+    },
+    {
+      "path": "wholecell_py/states/chromosome_damage_updates.py",
+      "sha256": "e801d49653a29cf68fb5e95f64fb8a167a54cae06b11598139216566f0f48b60",
+      "bytes": 5014
+    },
+    {
+      "path": "wholecell_py/states/chromosome_damage_views.py",
+      "sha256": "c854d227556f60c0d72a8420eb16f86caa9850663c61a3eac4ff4eb25c5d7db8",
+      "bytes": 11974
+    },
+    {
+      "path": "wholecell_py/states/chromosome_derived.py",
+      "sha256": "c2716c846aa4111d9376257ad500038470bbe35f7c2d940af56f90f5b40ba054",
+      "bytes": 11429
+    },
+    {
+      "path": "wholecell_py/states/chromosome_mass_view.py",
+      "sha256": "7a14b93c9f24eb0d12a4f9ee11c109ab32fd6815bda21020dfc78eaa51de8c88",
+      "bytes": 11417
+    },
+    {
+      "path": "wholecell_py/states/chromosome_polymerized_queries.py",
+      "sha256": "3fe12bab8b051e39f792f01e372d9f64aec2d9bbd6931146bb8b80788e31a6fc",
+      "bytes": 8919
+    },
+    {
+      "path": "wholecell_py/states/chromosome_regions.py",
+      "sha256": "dba095c785fdd4eaa265461ada55cb5ac3df4f722da2a7769967a10cf8389acb",
+      "bytes": 10223
+    },
+    {
+      "path": "wholecell_py/states/chromosome_restriction_queries.py",
+      "sha256": "3d03961a2fc8ed3696bcf65422df7d23f694bc4caf1d9b3f6822499c159b365a",
+      "bytes": 10414
+    },
+    {
+      "path": "wholecell_py/states/chromosome_sampling.py",
+      "sha256": "a0dc99764de6876d61ff4264aaaf0a9c1016cebade84cbfb4d5d0978c371d814",
+      "bytes": 12490
+    },
+    {
+      "path": "wholecell_py/states/chromosome_synthesis_updates.py",
+      "sha256": "863978adb3165628f5712d895b09a0a5e11b0a4f405e0dfd6c2302c5e842afc1",
+      "bytes": 11521
+    },
+    {
+      "path": "wholecell_py/states/ftsz_ring.py",
+      "sha256": "d44262c60622d3bd2047c1c29f3f09dbdcf2209d488fe9a003fdd01c3d49b15b",
+      "bytes": 3681
+    },
+    {
+      "path": "wholecell_py/states/geometry.py",
+      "sha256": "7cebe4daff1317743b9f9fd493bb8f79fb5e820c1ac94a6b7b65fc00809d63cb",
+      "bytes": 4948
+    },
+    {
+      "path": "wholecell_py/states/host.py",
+      "sha256": "294b69a49ce5bdd88619915af8776dd2808401616b9fc289005a76f94e5b3f7c",
+      "bytes": 2340
+    },
+    {
+      "path": "wholecell_py/states/mass.py",
+      "sha256": "85b4efda601b4842bd40895f7a1f7eee8b77caa97c9e503cc44d75a65d59a266",
+      "bytes": 5840
+    },
+    {
+      "path": "wholecell_py/states/metabolic_reaction.py",
+      "sha256": "55787271209e7279bea10d8915e8e2eb04484815ff55dcae1f2eb2c0d975a643",
+      "bytes": 3595
+    },
+    {
+      "path": "wholecell_py/states/metabolite.py",
+      "sha256": "98e087bd5c87c0c7539a5c2a2f77f53d41d9a6beb16126f9021d93619c9a0765",
+      "bytes": 12269
+    },
+    {
+      "path": "wholecell_py/states/polypeptide.py",
+      "sha256": "b64aac21f77d4b7b21c19c443ca41b950366791a4664b5dd30a10660e3889653",
+      "bytes": 14860
+    },
+    {
+      "path": "wholecell_py/states/protein_complex.py",
+      "sha256": "46572bb91fa041b285af771475cda10889bdb958db70db4e7e8c766d404e2338",
+      "bytes": 14669
+    },
+    {
+      "path": "wholecell_py/states/protein_monomer.py",
+      "sha256": "d4065baa4c4fc4c46cc88667e11ee34fcfbe17b6125d672e46a9cfbd6cfeb930",
+      "bytes": 12000
+    },
+    {
+      "path": "wholecell_py/states/ribosome.py",
+      "sha256": "49701dd4fef03d0e623f4e8473a6e7005ba03ba8e831771f5aca0399300743c5",
+      "bytes": 13085
+    },
+    {
+      "path": "wholecell_py/states/rna.py",
+      "sha256": "c20361c1d89ceb9bbf30cdc76c48526f0eb11372945aadcab571c72a00c1421f",
+      "bytes": 15894
+    },
+    {
+      "path": "wholecell_py/states/rna_polymerase.py",
+      "sha256": "44482e3716085d4cf402f843e06510ce4af98437bf5af5708f344d479cb2264f",
+      "bytes": 7704
+    },
+    {
+      "path": "wholecell_py/states/stimulus.py",
+      "sha256": "f74b1c884435fbfea019b533815c85cefbe5b5c0bfa0c00989c873390a113746",
+      "bytes": 5260
+    },
+    {
+      "path": "wholecell_py/states/time.py",
+      "sha256": "af3da8bbf2d1447b42e82f57333bfa3b3c7f982ee30c01e4a69d2d3d221e96aa",
+      "bytes": 2382
+    },
+    {
+      "path": "wholecell_py/states/transcript.py",
+      "sha256": "ec0352de94a2998b34ef10e41f0fdba79489e440ee03e5c6ee43ea9cb981683a",
+      "bytes": 8396
+    }
+  ]
+}

@@ -1,0 +1,300 @@
+{
+  "python_completed": [
+    {
+      "seed": 108,
+      "wall_s": 20282.54097700119,
+      "time_s": 27127.0,
+      "rate": 1.3344974887856436,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 4.934417967331502e-05,
+      "mass": 8.225342674811549e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 102,
+      "wall_s": 20344.853466033936,
+      "time_s": 27562.0,
+      "rate": 1.3517915007800394,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 5.1083878315643427e-05,
+      "mass": 8.24596652383704e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 111,
+      "wall_s": 20487.888777017593,
+      "time_s": 27654.0,
+      "rate": 1.346844484579286,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 4.8553407563165746e-05,
+      "mass": 8.207645255286173e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 114,
+      "wall_s": 20551.161992311478,
+      "time_s": 27525.0,
+      "rate": 1.3364207829355392,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 5.0134951783464296e-05,
+      "mass": 8.193375434288449e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 103,
+      "wall_s": 20560.579962730408,
+      "time_s": 26701.0,
+      "rate": 1.295731932090019,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 5.5512202132479394e-05,
+      "mass": 8.276205458317734e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 109,
+      "wall_s": 20752.448808431625,
+      "time_s": 28190.0,
+      "rate": 1.3555026811376067,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 5.171649600376286e-05,
+      "mass": 8.21921816985703e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 104,
+      "wall_s": 20852.20072746277,
+      "time_s": 27767.0,
+      "rate": 1.3287326533121908,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 5.0767569471583716e-05,
+      "mass": 8.239791118423936e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 110,
+      "wall_s": 21632.62148499489,
+      "time_s": 29048.0,
+      "rate": 1.340013276712998,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 4.9660488517374735e-05,
+      "mass": 8.191265357176719e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 107,
+      "wall_s": 21655.255716323853,
+      "time_s": 28415.0,
+      "rate": 1.3093819057803064,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 5.187465042579271e-05,
+      "mass": 8.220524332485941e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 112,
+      "wall_s": 21775.46081495285,
+      "time_s": 29688.0,
+      "rate": 1.3606141450588702,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 4.886971640722545e-05,
+      "mass": 8.21461593098427e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 113,
+      "wall_s": 21779.43465089798,
+      "time_s": 29362.0,
+      "rate": 1.345397640925076,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 5.171649600376286e-05,
+      "mass": 8.184859199943617e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 106,
+      "wall_s": 21992.00063753128,
+      "time_s": 29881.0,
+      "rate": 1.3559930490865777,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 5.345619464609127e-05,
+      "mass": 8.284097147293959e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 101,
+      "wall_s": 22423.932129383087,
+      "time_s": 30713.0,
+      "rate": 1.3669770236163887,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 4.3808774902270055e-05,
+      "mass": 8.116902228745148e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 115,
+      "wall_s": 22530.960104465485,
+      "time_s": 30102.0,
+      "rate": 1.3333652831796492,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 4.7762635453016454e-05,
+      "mass": 8.200893178786206e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 116,
+      "wall_s": 22535.95872735977,
+      "time_s": 28796.0,
+      "rate": 1.2751177062244559,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 4.760448103098661e-05,
+      "mass": 8.175738510173428e-15,
+      "fatal_stderr": false
+    },
+    {
+      "seed": 105,
+      "wall_s": 23491.198091745377,
+      "time_s": 31486.0,
+      "rate": 1.3377776594137551,
+      "exit_code": 0,
+      "pinched": true,
+      "diameter": 0.0,
+      "growth": 4.206907625994165e-05,
+      "mass": 8.097690719577514e-15,
+      "fatal_stderr": false
+    }
+  ],
+  "python_n": 16,
+  "python_median_wall_h": 6.012205166849825,
+  "python_wall_h_range": [
+    5.634039160278109,
+    6.525332803262605
+  ],
+  "python_median_rate": 1.3388954680633764,
+  "matlab": [
+    {
+      "seed": 102,
+      "time_s": 31113,
+      "pinched": true,
+      "matlab_version": "26.2.0.3433840 (R2026b) Update 1",
+      "wall_seconds": 9741.908357,
+      "status": "finished",
+      "sim_s_per_wall_s": 3.1875684785812033
+    },
+    {
+      "seed": 103,
+      "time_s": 30313,
+      "pinched": true,
+      "matlab_version": "26.2.0.3433840 (R2026b) Update 1",
+      "wall_seconds": 9451.916672,
+      "status": "finished",
+      "sim_s_per_wall_s": 3.200726482240406
+    },
+    {
+      "seed": 104,
+      "time_s": 27195,
+      "pinched": true,
+      "matlab_version": "26.2.0.3433840 (R2026b) Update 1",
+      "wall_seconds": 8676.141354,
+      "status": "finished",
+      "sim_s_per_wall_s": 3.1275424054138803
+    },
+    {
+      "seed": 105,
+      "time_s": 28634,
+      "pinched": true,
+      "matlab_version": "26.2.0.3433840 (R2026b) Update 1",
+      "wall_seconds": 9021.551393,
+      "status": "finished",
+      "sim_s_per_wall_s": 3.1673044640826555
+    },
+    {
+      "seed": 106,
+      "time_s": 27737,
+      "pinched": true,
+      "matlab_version": "26.2.0.3433840 (R2026b) Update 1",
+      "wall_seconds": 8300.084136,
+      "status": "finished",
+      "sim_s_per_wall_s": 3.3345445114172274
+    },
+    {
+      "seed": 107,
+      "time_s": 28236,
+      "pinched": true,
+      "matlab_version": "26.2.0.3433840 (R2026b) Update 1",
+      "wall_seconds": 8411.770141,
+      "status": "finished",
+      "sim_s_per_wall_s": 3.3495922413127666
+    },
+    {
+      "seed": 108,
+      "time_s": 29031,
+      "pinched": true,
+      "matlab_version": "26.2.0.3433840 (R2026b) Update 1",
+      "wall_seconds": 8626.875972,
+      "status": "finished",
+      "sim_s_per_wall_s": 3.3582260941307527
+    },
+    {
+      "seed": 110,
+      "time_s": 30759,
+      "pinched": true,
+      "matlab_version": "26.2.0.3433840 (R2026b) Update 1",
+      "wall_seconds": 9156.123208,
+      "status": "finished",
+      "sim_s_per_wall_s": 3.352838237604458
+    },
+    {
+      "seed": 111,
+      "time_s": 28965,
+      "pinched": true,
+      "matlab_version": "26.2.0.3433840 (R2026b) Update 1",
+      "wall_seconds": 8628.486348,
+      "status": "finished",
+      "sim_s_per_wall_s": 3.349950250161768
+    },
+    {
+      "seed": 112,
+      "time_s": 28327,
+      "pinched": true,
+      "matlab_version": "26.2.0.3433840 (R2026b) Update 1",
+      "wall_seconds": 8560.232031,
+      "status": "finished",
+      "sim_s_per_wall_s": 3.30213011722509
+    }
+  ],
+  "matlab_median_wall_h": 2.4034205141666662,
+  "matlab_median_rate": 3.318337314321159,
+  "scope": "Production full-cycle throughput, not controlled phase/concurrency/logging matched benchmark. Python16 concurrent; MATLAB4 concurrent with other workloads; excluded MATLAB VPS101 and interrupted109.",
+  "python_source": "d4e29731194d75ed645f117b3ad312742feb0e27d9f3c954eca8537ba756f98a",
+  "matlab_over_python_rate": 2.4784140311722123
+}

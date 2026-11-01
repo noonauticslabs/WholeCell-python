@@ -1,0 +1,9 @@
+{
+  "source": "WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+util/polymerize.m",
+  "matlab": "R2026b Update 1 (26.2.0.3433840), licensed VPS interactive session",
+  "rng": "RandStream('mt19937ar','Seed',1), independent from running cell",
+  "cases": [
+    {"sequences":["ACG","AAC"],"baseAmounts":[2,3,3],"bases":"ACG","energy":0,"energyCostPerBase":0,"progress":[3,1],"remaining":[0,2,2],"costs":[2,1,1],"remainingEnergy":0,"energyCost":0},
+    {"sequences":[[1,1],[1,1]],"baseAmounts":[10],"bases":[1],"energy":6,"energyCostPerBase":2,"progressSorted":[2,2],"remaining":[6],"costs":[4],"remainingEnergy":-2,"energyCost":8,"note":"Original single-base MATLAB sum dimension edge case, preserved rather than physically corrected"}
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "new_figures": 4,
+  "gif_frames": 144,
+  "glyphs": "schematic, data-driven",
+  "chromosome_renderer": "source-derived frame geometry; original movie/logging pipeline not ported",
+  "chromosome_times_s": [
+    60,
+    30713
+  ],
+  "tests_passed": 2,
+  "new_simulations": 0,
+  "runtime_changed": false,
+  "files": {
+    "chromosome_t60.svg": "ecc9e7d61f89fc781d71f5ced5900c6c177e974eda384ed69a80151b3de229f4",
+    "Paper_inspired_comparisons.pdf": "0165f5dbe24d5df4806e5c703c2f8e310ee3f400f9a8e81610fa1e9a75f59a7b",
+    "animation_preview_000.png": "1bd3b53e46aa485f444ded0fbbdd7cb4a1d59bf6464d6c3fc011e1b66e6f67a7",
+    "chromosome_seed101_division.json": "8b37b29a2c842d097fcf752b0ba1d6b716cec7c180a0a5f3cbd13929718d0c99",
+    "animation_preview_072.png": "34f81973fc417069564bb7c8531f91a8a261bdd74088d5eead2c7e9696c65317",
+    "whole_cell_comparison.gif": "3178020bfc217c485f52e3ff73a11865903e403d084554b2df9ce42fb923b99b",
+    "chromosome_t60.png": "cb1d0b0ee7c7b4a339a2274af75a1b03286807dd3c9ba4eea17f38cec9c5acdd",
+    "13_cell_cycle_milestones.png": "6eec2515c8808ff6d4637bc2895738a7427d0b1900d1e623732b2a685dcf1d61",
+    "12_growth_and_division_paper_style.png": "9305c0ab6ce13626b1630e4524d67424b3906d0418823ec96273474a952b91ee",
+    "chromosome_t60.json": "23c12f7f392353942192c9ad28083e9c78cd8e8d0e3794ba0204706fd45cfa69",
+    "chromosome_seed101_division.svg": "4e33f2b777a07fdb8013dba9da3c89e611addf2d5a0ff42efc71b77f368bd42d",
+    "chromosome_seed101_division.png": "2a1e4d0dd5e04c2cb65b35dc4eb699464164436e0e6bf062bce6537a04c4fa67",
+    "14_normalized_cell_components.png": "d255c4a565651372e39de083d93f3b1a975b0696d913a2be05087cd4f7c0aad1",
+    "animation_preview_143.png": "e273c467cbcc1e7f123537e47448073f56d62e16e4984d5bb01a33144482424f",
+    "15_chromosome_source_renderer.png": "d8bb078c0ff92107d4cc977cd8fc0688ed525b302a9fb47f50c2cf07695b485a"
+  },
+  "scope": "Historical first presentation pass; animation superseded by animation-verification.json. Chromosome frames retained as diagnostic artifacts, not gallery feature."
+}

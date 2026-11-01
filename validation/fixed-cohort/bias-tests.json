@@ -1,0 +1,103 @@
+{
+  "scope": "Mean differences in six common-window averages and division time. Independent cells, no seed pairing. Welch tests with Holm adjustment over seven summaries; additional diagnostic on the fixed cohort, not a prospective equivalence test.",
+  "rows": [
+    {
+      "metric": "mass",
+      "python_mean": 5.711956881232955,
+      "matlab_mean": 5.68174856119943,
+      "python_sd": 0.1145133594770146,
+      "matlab_sd": 0.09637753329071064,
+      "standardized_mean_bias": 0.2854294442562692,
+      "welch_p": 0.49199212520839386,
+      "welch_mean_difference_ci95": [
+        -0.05954879151059149,
+        0.11996543157764154
+      ],
+      "holm_p": 1.0
+    },
+    {
+      "metric": "growth",
+      "python_mean": 3.581358690823254,
+      "matlab_mean": 3.5393626821442954,
+      "python_sd": 0.2741832977360901,
+      "matlab_sd": 0.2398052983298125,
+      "standardized_mean_bias": 0.1630479234757658,
+      "welch_p": 0.6935286493231152,
+      "welch_mean_difference_ci95": [
+        -0.17630013865918512,
+        0.2602921560171023
+      ],
+      "holm_p": 1.0
+    },
+    {
+      "metric": "rna",
+      "python_mean": 3.0185317908201657,
+      "matlab_mean": 3.015586531226486,
+      "python_sd": 0.189413323341123,
+      "matlab_sd": 0.13515148894191062,
+      "standardized_mean_bias": 0.017900538153294093,
+      "welch_p": 0.9654633181931691,
+      "welch_mean_difference_ci95": [
+        -0.13721841754663816,
+        0.14310893673399788
+      ],
+      "holm_p": 1.0
+    },
+    {
+      "metric": "monomers",
+      "python_mean": 32.12740218209181,
+      "matlab_mean": 31.945907731376973,
+      "python_sd": 0.8340091175519588,
+      "matlab_sd": 0.6771109299470793,
+      "standardized_mean_bias": 0.23892739992744622,
+      "welch_p": 0.5645840915993313,
+      "welch_mean_difference_ci95": [
+        -0.46322069907117247,
+        0.826209600500839
+      ],
+      "holm_p": 1.0
+    },
+    {
+      "metric": "complexes",
+      "python_mean": 6.634132336343114,
+      "matlab_mean": 6.640328630549284,
+      "python_sd": 0.14344492452088967,
+      "matlab_sd": 0.15627619064398998,
+      "standardized_mean_bias": -0.041309227427223115,
+      "welch_p": 0.9203255807725013,
+      "welch_mean_difference_ci95": [
+        -0.13324652540861787,
+        0.12085393699627839
+      ],
+      "holm_p": 1.0
+    },
+    {
+      "metric": "ploidy",
+      "python_mean": 1.5195804665577644,
+      "matlab_mean": 1.5127024041849817,
+      "python_sd": 0.02654037277262426,
+      "matlab_sd": 0.022935084797913875,
+      "standardized_mean_bias": 0.27730408646540944,
+      "welch_p": 0.5042091305570219,
+      "welch_mean_difference_ci95": [
+        -0.014147415312717054,
+        0.027903540058282366
+      ],
+      "holm_p": 1.0
+    },
+    {
+      "metric": "division",
+      "python_mean": 7.968333333333335,
+      "matlab_mean": 8.031689814814815,
+      "python_sd": 0.4134974252047452,
+      "matlab_sd": 0.33769404486009147,
+      "standardized_mean_bias": -0.16783029970243485,
+      "welch_p": 0.6851347880848038,
+      "welch_mean_difference_ci95": [
+        -0.3837128239380225,
+        0.25699986097506206
+      ],
+      "holm_p": 1.0
+    }
+  ]
+}

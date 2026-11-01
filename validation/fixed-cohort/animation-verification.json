@@ -1,0 +1,8 @@
+{
+  "version": "restored original white-background 24-cell ensemble GIF",
+  "frames": 144,
+  "figure15": "removed from gallery and release; prior artifacts archived privately",
+  "gif_sha256": "3178020bfc217c485f52e3ff73a11865903e403d084554b2df9ce42fb923b99b",
+  "renderer": "scripts/paper_presentation.py",
+  "simulation_changes": false
+}

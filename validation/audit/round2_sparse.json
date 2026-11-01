@@ -1,0 +1,3360 @@
+{
+  "round": "2026-11-01-round2",
+  "scope": [
+    "wholecell_py/sparsemat.py",
+    "wholecell_py/circular_sparsemat.py",
+    "wholecell_py/chromosome_sequence.py",
+    "wholecell_py/randstream.py"
+  ],
+  "baseline_ledger": "results/algorithm_audit_20261101/audit_infrastructure.json",
+  "notes": "Baseline ledger is unchanged. This round records current source comparison, fixes, remaining limitations, and added infrastructure methods. RNG engine differences are classified separately from distribution/parameter correctness.",
+  "status_counts": {
+    "matched": 40,
+    "not_applicable": 18,
+    "mismatched": 5,
+    "not_verified": 31,
+    "documented_rng_difference": 14
+  },
+  "rows": [
+    {
+      "file": "chromosome_sequence.py",
+      "function": "_as_sequence",
+      "line": 19,
+      "end_line": 30,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "ChromosomeSequence constructor validation/reshape",
+        "lines": [
+          [
+            45,
+            56
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Constructor now rejects non-vector character arrays, matching MATLAB `isvector` validation for supported Python character inputs. Evidence: `tests/test_chromosome_sequence.py::test_constructor_rejects_character_matrices_like_matlab_vector_contract`.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:19-30.",
+        "Compared with ChromosomeSequence.m:45-56."
+      ],
+      "recommended_test": "Test parity for coordinate wrapping, strand parity, output shape/type, and non-vector/malformed inputs against a MATLAB oracle.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:19-30.",
+        "Compared with ChromosomeSequence.m:45-56.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.__init__",
+      "line": 36,
+      "end_line": 39,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "ChromosomeSequence",
+        "lines": [
+          [
+            45,
+            56
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Positive-strand storage and A/C/G/T validation correspond to MATLAB constructor; Python additionally rejects empty strings explicitly.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:36-39.",
+        "Compared with ChromosomeSequence.m:45-56."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:36-39.",
+        "Compared with ChromosomeSequence.m:45-56.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.positive_strand",
+      "line": 42,
+      "end_line": 43,
+      "status": "not_applicable",
+      "category": "python_only:pickle_or_api",
+      "matlab_source": null,
+      "mathworks_doc_urls": [],
+      "rationale": "MATLAB sequence storage is protected and has no public setter; Python intentionally keeps positive_strand assignable for the port API. Setter rebuilds caches on replacement.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:42-43."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "not_applicable",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:42-43.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.positive_strand",
+      "line": 46,
+      "end_line": 56,
+      "status": "not_applicable",
+      "category": "python_only:pickle_or_api",
+      "matlab_source": null,
+      "mathworks_doc_urls": [],
+      "rationale": "MATLAB sequence storage is protected and has no public setter; Python intentionally keeps positive_strand assignable for the port API. Setter rebuilds caches on replacement.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:46-56."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "not_applicable",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:46-56.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.__setstate__",
+      "line": 58,
+      "end_line": 63,
+      "status": "not_applicable",
+      "category": "python_only:pickle_or_api",
+      "matlab_source": null,
+      "mathworks_doc_urls": [],
+      "rationale": "Python-only checkpoint migration that rebuilds derived fields when loading pre-cache pickles.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:58-63."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "not_applicable",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:58-63.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.positive_strand_sequence",
+      "line": 66,
+      "end_line": 67,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "positiveStrandSequence property",
+        "lines": [
+          [
+            25,
+            30
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Returns the stored positive strand.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:66-67.",
+        "Compared with ChromosomeSequence.m:25-30."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:66-67.",
+        "Compared with ChromosomeSequence.m:25-30.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.negative_strand",
+      "line": 70,
+      "end_line": 71,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "get.negativeStrandSequence",
+        "lines": [
+          [
+            91,
+            93
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Returns the basewise complement without reversing. Python computes/caches equivalent complement during setter/unpickle restore.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:70-71.",
+        "Compared with ChromosomeSequence.m:91-93."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:70-71.",
+        "Compared with ChromosomeSequence.m:91-93.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.negative_strand_sequence",
+      "line": 74,
+      "end_line": 75,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "get.negativeStrandSequence",
+        "lines": [
+          [
+            91,
+            93
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Alias to same basewise complement.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:74-75.",
+        "Compared with ChromosomeSequence.m:91-93."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:74-75.",
+        "Compared with ChromosomeSequence.m:91-93.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.shape",
+      "line": 78,
+      "end_line": 79,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "size",
+        "lines": [
+          [
+            118,
+            132
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Exposes length by four strand columns.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:78-79.",
+        "Compared with ChromosomeSequence.m:118-132."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:78-79.",
+        "Compared with ChromosomeSequence.m:118-132.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.__len__",
+      "line": 81,
+      "end_line": 82,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "length",
+        "lines": [
+          [
+            114,
+            116
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Returns chromosome length.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:81-82.",
+        "Compared with ChromosomeSequence.m:114-116."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:81-82.",
+        "Compared with ChromosomeSequence.m:114-116.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.size",
+      "line": 84,
+      "end_line": 89,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "size",
+        "lines": [
+          [
+            118,
+            132
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "One-based dimension query and trailing dimensions of size one correspond.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:84-89.",
+        "Compared with ChromosomeSequence.m:118-132."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:84-89.",
+        "Compared with ChromosomeSequence.m:118-132.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence._positions",
+      "line": 91,
+      "end_line": 100,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "subsequence coordinate normalization",
+        "lines": [
+          [
+            410,
+            430
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/mod.html",
+        "https://www.mathworks.com/help/matlab/ref/double.reshape.html"
+      ],
+      "rationale": "Valid finite integer coordinates wrap with MATLAB mod semantics; fractional/nonfinite values are rejected before indexing. Existing wrapped-coordinate tests and the 20-step replication sequence-budget test cover model-relevant cases.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:91-100.",
+        "Compared with ChromosomeSequence.m:410-430."
+      ],
+      "recommended_test": "Test parity for coordinate wrapping, strand parity, output shape/type, and non-vector/malformed inputs against a MATLAB oracle.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:91-100.",
+        "Compared with ChromosomeSequence.m:410-430.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence._subsequence_bases",
+      "line": 102,
+      "end_line": 122,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "subsequence",
+        "lines": [
+          [
+            410,
+            430
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/mod.html",
+        "https://www.mathworks.com/help/matlab/ref/double.reshape.html"
+      ],
+      "rationale": "Wraps one-based positions and complements only even-numbered strands; Python NumPy broadcast behavior is equivalent for scalar/vector shapes used by model.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:102-122.",
+        "Compared with ChromosomeSequence.m:410-430."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:102-122.",
+        "Compared with ChromosomeSequence.m:410-430.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.strand",
+      "line": 124,
+      "end_line": 130,
+      "status": "not_applicable",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "subsref",
+        "lines": [
+          [
+            165,
+            192
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Python-only convenience method selecting by strand parity; MATLAB callers use overloaded column subscripting. The source-facing behavior is audited under `__getitem__`.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:124-130.",
+        "Compared with ChromosomeSequence.m:165-192."
+      ],
+      "recommended_test": "Test parity for coordinate wrapping, strand parity, output shape/type, and non-vector/malformed inputs against a MATLAB oracle.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:124-130.",
+        "Compared with ChromosomeSequence.m:165-192.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.circularposition",
+      "line": 132,
+      "end_line": 136,
+      "status": "not_applicable",
+      "category": "python_only:pickle_or_api",
+      "matlab_source": null,
+      "mathworks_doc_urls": [],
+      "rationale": "No named MATLAB method; implementation directly exposes the same modulo expression used inside MATLAB subsequence and subsref.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:132-136."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "not_applicable",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:132-136.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.subsequence",
+      "line": 138,
+      "end_line": 145,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "subsequence",
+        "lines": [
+          [
+            410,
+            430
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/mod.html",
+        "https://www.mathworks.com/help/matlab/ref/double.reshape.html"
+      ],
+      "rationale": "The sequence and complement selection algorithm matches; Python returns strings for 1-D and NumPy character arrays for higher dimensions as a port-facing type adaptation.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:138-145.",
+        "Compared with ChromosomeSequence.m:410-430."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:138-145.",
+        "Compared with ChromosomeSequence.m:410-430.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.basecount",
+      "line": 147,
+      "end_line": 153,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "getBaseCounts",
+        "lines": [
+          [
+            72,
+            85
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Counts A,C,G,T separately on positive and complementary strand; strand parity selects positive/negative counts.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:147-153.",
+        "Compared with ChromosomeSequence.m:72-85."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:147-153.",
+        "Compared with ChromosomeSequence.m:72-85.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.get_base_counts",
+      "line": 155,
+      "end_line": 156,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "getBaseCounts",
+        "lines": [
+          [
+            72,
+            85
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Pythonic alias of the same count algorithm.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:155-156.",
+        "Compared with ChromosomeSequence.m:72-85."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:155-156.",
+        "Compared with ChromosomeSequence.m:72-85.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.getBaseCounts",
+      "line": 158,
+      "end_line": 164,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "getBaseCounts",
+        "lines": [
+          [
+            72,
+            85
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Equivalent A,C,G,T order and positive/negative/no-strand count selection.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:158-164.",
+        "Compared with ChromosomeSequence.m:72-85."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:158-164.",
+        "Compared with ChromosomeSequence.m:72-85.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.getGCContent",
+      "line": 166,
+      "end_line": 169,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "getGCContent",
+        "lines": [
+          [
+            61,
+            70
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Returns (G+C)/length, reusing the same invariant-derived summary.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:166-169.",
+        "Compared with ChromosomeSequence.m:61-70."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:166-169.",
+        "Compared with ChromosomeSequence.m:61-70.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.subsequenceBaseCounts",
+      "line": 171,
+      "end_line": 175,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "subsequenceBaseCounts",
+        "lines": [
+          [
+            432,
+            439
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/mod.html",
+        "https://www.mathworks.com/help/matlab/ref/double.reshape.html"
+      ],
+      "rationale": "Counts A,C,G,T from selected sequence. Python counts directly from a character array instead of materializing the intermediate string; biological result/order is the same.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:171-175.",
+        "Compared with ChromosomeSequence.m:432-439."
+      ],
+      "recommended_test": "Retain sequence complement, wrapped-coordinate, and base-count parity tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:171-175.",
+        "Compared with ChromosomeSequence.m:432-439.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "chromosome_sequence.py",
+      "function": "ChromosomeSequence.__getitem__",
+      "line": 177,
+      "end_line": 199,
+      "status": "mismatched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+cell/+sim/+constant/ChromosomeSequence.m",
+        "method": "subsref",
+        "lines": [
+          [
+            165,
+            192
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Two-subscript array indexing now uses Cartesian products and wraps row/strand coordinates. Remaining Python slice syntax is zero-based/exclusive and the adapter return types differ from MATLAB char-array shape rules; do not use this as full MATLAB subsref equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:177-199.",
+        "Compared with ChromosomeSequence.m:165-192."
+      ],
+      "recommended_test": "Test parity for coordinate wrapping, strand parity, output shape/type, and non-vector/malformed inputs against a MATLAB oracle.",
+      "baseline_status": "mismatched",
+      "round2_evidence": [
+        "Inspected wholecell_py/chromosome_sequence.py:177-199.",
+        "Compared with ChromosomeSequence.m:165-192.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md.",
+        "tests/test_chromosome_sequence.py::test_two_subscript_indexing_uses_matlab_cartesian_product",
+        "tests/test_chromosome_sequence.py::test_two_subscript_nonscalar_results_keep_matlab_matrix_shape",
+        "tests/test_chromosome_sequence.py::test_linear_indexing_rejects_noninteger_or_nonfinite_indices"
+      ],
+      "reviewed_in_round2": true,
+      "round2_status": "mismatched",
+      "round2_notes": "Two-subscript numeric reads now preserve MATLAB Cartesian matrix shape for nonscalar selectors, and linear indexing rejects fractional/nonfinite inputs. Remaining documented adapter differences are Python slice syntax and string output for one-dimensional linear indexing; MATLAB char-array shape/colon syntax is not fully modeled.",
+      "round2_tests": [
+        "tests/test_chromosome_sequence.py::test_two_subscript_indexing_uses_matlab_cartesian_product",
+        "tests/test_chromosome_sequence.py::test_two_subscript_nonscalar_results_keep_matlab_matrix_shape",
+        "tests/test_chromosome_sequence.py::test_linear_indexing_rejects_noninteger_or_nonfinite_indices"
+      ]
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat.__init__",
+      "line": 20,
+      "end_line": 68,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/CircularSparseMat.m",
+        "method": "constructor",
+        "lines": [
+          [
+            33,
+            70
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Integral-coordinate/dimension validation and selected-axis wrapping are source-shaped. Constructor forms differ from MATLAB overload dispatch, and zero-length circular dimensions with nonempty coordinates have no validated oracle case.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:20-68.",
+        "Compared with CircularSparseMat.m:33-70."
+      ],
+      "recommended_test": "Differential-test empty extents, multiple circular dims, mixed slices/indices, duplicate indices, and assignment expansion.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:20-68.",
+        "Compared with CircularSparseMat.m:33-70.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat.copy",
+      "line": 70,
+      "end_line": 71,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/CircularSparseMat.m",
+        "method": "constructor one-arg copy",
+        "lines": [
+          [
+            48,
+            59
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Preserves circularDims while copying underlying sparse coordinates.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:70-71.",
+        "Compared with CircularSparseMat.m:48-59."
+      ],
+      "recommended_test": "Retain wrapped-coordinate and circular-metadata tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:70-71.",
+        "Compared with CircularSparseMat.m:48-59.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat.isDimCircular",
+      "line": 73,
+      "end_line": 74,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/CircularSparseMat.m",
+        "method": "isDimCircular",
+        "lines": [
+          [
+            88,
+            90
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Membership test over circularDims.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:73-74.",
+        "Compared with CircularSparseMat.m:88-90."
+      ],
+      "recommended_test": "Retain wrapped-coordinate and circular-metadata tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:73-74.",
+        "Compared with CircularSparseMat.m:88-90.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat.isequal",
+      "line": 76,
+      "end_line": 86,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/CircularSparseMat.m",
+        "method": "isequal",
+        "lines": [
+          [
+            92,
+            95
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Checks underlying sparse equality plus circularDims.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:76-86.",
+        "Compared with CircularSparseMat.m:92-95."
+      ],
+      "recommended_test": "Retain wrapped-coordinate and circular-metadata tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:76-86.",
+        "Compared with CircularSparseMat.m:92-95.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat.get_coords",
+      "line": 88,
+      "end_line": 89,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/CircularSparseMat.m",
+        "method": "subsref coordinate matrix",
+        "lines": [
+          [
+            154,
+            190
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/matlab_prog/array-indexing.html"
+      ],
+      "rationale": "Wraps circular coordinates before inherited coordinate lookup.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:88-89.",
+        "Compared with CircularSparseMat.m:154-190."
+      ],
+      "recommended_test": "Retain wrapped-coordinate and circular-metadata tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:88-89.",
+        "Compared with CircularSparseMat.m:154-190.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat.set_coords",
+      "line": 91,
+      "end_line": 94,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/CircularSparseMat.m",
+        "method": "subsasgn coordinate matrix",
+        "lines": [
+          [
+            115,
+            151
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/matlab_prog/array-indexing.html"
+      ],
+      "rationale": "Wraps circular coordinates and delegates assignment.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:91-94.",
+        "Compared with CircularSparseMat.m:115-151."
+      ],
+      "recommended_test": "Retain wrapped-coordinate and circular-metadata tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:91-94.",
+        "Compared with CircularSparseMat.m:115-151.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat.__getitem__",
+      "line": 96,
+      "end_line": 117,
+      "status": "mismatched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/CircularSparseMat.m",
+        "method": "subsref",
+        "lines": [
+          [
+            154,
+            190
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/matlab_prog/array-indexing.html"
+      ],
+      "rationale": "Circular coordinate/range reads wrap selected dimensions, but Python tuple/slice/linear indexing remains an adapter with different MATLAB colon, logical-index, and output-shape behavior.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:96-117.",
+        "Compared with CircularSparseMat.m:154-190."
+      ],
+      "recommended_test": "Differential-test empty extents, multiple circular dims, mixed slices/indices, duplicate indices, and assignment expansion.",
+      "baseline_status": "mismatched",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:96-117.",
+        "Compared with CircularSparseMat.m:154-190.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md.",
+        "tests/test_circular_sparsemat.py::test_coordinate_and_range_indexing_wrap"
+      ],
+      "reviewed_in_round2": true,
+      "round2_status": "mismatched",
+      "round2_notes": "Circular coordinate queries and tuple selectors wrap circular axes, but Python returns value arrays for these selectors; MATLAB range indexing returns a sparse object with MATLAB output-shape rules. Logical selectors and exact MATLAB colon/index-shape behavior remain outside the adapter. The circular coordinate and range cases currently tested agree with wrapping semantics.",
+      "round2_tests": [
+        "tests/test_circular_sparsemat.py::test_coordinate_and_range_indexing_wrap"
+      ]
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat.__setitem__",
+      "line": 119,
+      "end_line": 138,
+      "status": "mismatched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/CircularSparseMat.m",
+        "method": "subsasgn",
+        "lines": [
+          [
+            115,
+            151
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/matlab_prog/array-indexing.html"
+      ],
+      "rationale": "Circular coordinate/range writes wrap selected dimensions and preserve metadata; receiver mutation and array-assignment shape rules differ from MATLAB value-class subsasgn.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:119-138.",
+        "Compared with CircularSparseMat.m:115-151."
+      ],
+      "recommended_test": "Differential-test empty extents, multiple circular dims, mixed slices/indices, duplicate indices, and assignment expansion.",
+      "baseline_status": "mismatched",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:119-138.",
+        "Compared with CircularSparseMat.m:115-151.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md.",
+        "tests/test_circular_sparsemat.py::test_assignment_wraps_and_preserves_sparse_coordinates"
+      ],
+      "reviewed_in_round2": true,
+      "round2_status": "mismatched",
+      "round2_notes": "Circular coordinate and tuple writes wrap selected axes and update the receiver in place. MATLAB subsasgn uses value-class assignment and broader range/RHS shape rules; no source-demonstrated defect was found in current wrapped coordinate writes.",
+      "round2_tests": [
+        "tests/test_circular_sparsemat.py::test_assignment_wraps_and_preserves_sparse_coordinates"
+      ]
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat._selector",
+      "line": 140,
+      "end_line": 154,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/CircularSparseMat.m",
+        "method": "subsref/subsasgn numeric selectors",
+        "lines": [
+          [
+            115,
+            190
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/matlab_prog/array-indexing.html"
+      ],
+      "rationale": "Validated integral selectors wrap only circular axes; MATLAB colon indexing and logical/range corner cases are not completely modeled.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:140-154.",
+        "Compared with CircularSparseMat.m:115-190."
+      ],
+      "recommended_test": "Differential-test empty extents, multiple circular dims, mixed slices/indices, duplicate indices, and assignment expansion.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:140-154.",
+        "Compared with CircularSparseMat.m:115-190.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat._wrap_coords",
+      "line": 156,
+      "end_line": 169,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/CircularSparseMat.m",
+        "method": "constructor/subsref/subsasgn modulo wrapping",
+        "lines": [
+          [
+            33,
+            45
+          ],
+          [
+            115,
+            190
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Uses one-based modulo wrapping only on configured dimensions and copies its input coordinate array before mutation, preserving caller-array aliasing.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:156-169.",
+        "Compared with CircularSparseMat.m:33-45,115-190.",
+        "Updated during post-review source-backed correction reconciliation on 2026-11-01; targeted regression tests cover the listed fixed cases.",
+        "Post-review input-coordinate aliasing regression; included in root-reported 22 SparseMat/CircularSparseMat tests."
+      ],
+      "recommended_test": "Retain wrapped-coordinate and circular-metadata tests.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:156-169.",
+        "Compared with CircularSparseMat.m:33-45,115-190.",
+        "Updated during post-review source-backed correction reconciliation on 2026-11-01; targeted regression tests cover the listed fixed cases.",
+        "Post-review input-coordinate aliasing regression; included in root-reported 22 SparseMat/CircularSparseMat tests.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat._adopt",
+      "line": 171,
+      "end_line": 172,
+      "status": "not_applicable",
+      "category": "python_only:adapter",
+      "matlab_source": null,
+      "mathworks_doc_urls": [],
+      "rationale": "Python-only in-place object mutation helper required by Python assignment semantics.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:171-172."
+      ],
+      "recommended_test": "Retain wrapped-coordinate and circular-metadata tests.",
+      "baseline_status": "not_applicable",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:171-172.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat._from_sparse",
+      "line": 175,
+      "end_line": 176,
+      "status": "not_applicable",
+      "category": "python_only:adapter",
+      "matlab_source": null,
+      "mathworks_doc_urls": [],
+      "rationale": "Python factory that preserves circularDims when converting the base sparse result.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:175-176."
+      ],
+      "recommended_test": "Retain wrapped-coordinate and circular-metadata tests.",
+      "baseline_status": "not_applicable",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:175-176.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat.normalize",
+      "line": 178,
+      "end_line": 181,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/CircularSparseMat.m",
+        "method": "normalize",
+        "lines": [
+          [
+            73,
+            85
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "New source-backed implementation runs the SparseMat size/zero/sort normalization and maps circularDims through `oldDims`, then removes axes beyond resulting ndims. Focused singleton-axis/circular mapping regression passes.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:178-181.",
+        "Compared with CircularSparseMat.m:73-85."
+      ],
+      "recommended_test": "Differential-test empty extents, multiple circular dims, mixed slices/indices, duplicate indices, and assignment expansion.",
+      "baseline_status": "unimplemented",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:178-181.",
+        "Compared with CircularSparseMat.m:73-85.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md.",
+        "Compared CircularSparseMat.m normalize:73-87 and SparseMat.m reshape:165-190, permute:243-265, squeeze:267-280, sum:2544-2575.",
+        "tests/test_circular_sparsemat.py::test_normalize_maps_circular_dimensions_after_squeezing",
+        "tests/test_circular_sparsemat.py::test_reshape_returns_circular_type_and_clears_axis_metadata",
+        "tests/test_circular_sparsemat.py::test_permute_remaps_circular_axes_by_original_dimension",
+        "tests/test_circular_sparsemat.py::test_squeeze_drops_singleton_axes_and_remaps_remaining_circular_axes",
+        "tests/test_circular_sparsemat.py::test_sum_uses_wholecell_remaining_dimensions_for_circular_metadata"
+      ],
+      "reviewed_in_round2": true,
+      "round2_status": "matched",
+      "round2_notes": "Maps surviving old dimensions to output dimensions for reshape/permute/squeeze. Source reshape passes zeros and clears metadata; source sum bypasses prior metadata and constructs with all non-reduced old dimensions, preserved by CircularSparseMat.sum.",
+      "round2_tests": [
+        "tests/test_circular_sparsemat.py::test_normalize_maps_circular_dimensions_after_squeezing",
+        "tests/test_circular_sparsemat.py::test_reshape_returns_circular_type_and_clears_axis_metadata",
+        "tests/test_circular_sparsemat.py::test_permute_remaps_circular_axes_by_original_dimension",
+        "tests/test_circular_sparsemat.py::test_squeeze_drops_singleton_axes_and_remaps_remaining_circular_axes",
+        "tests/test_circular_sparsemat.py::test_sum_uses_wholecell_remaining_dimensions_for_circular_metadata"
+      ]
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat.tprod",
+      "line": 183,
+      "end_line": 186,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/CircularSparseMat.m",
+        "method": "tprod",
+        "lines": [
+          [
+            97,
+            113
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "New implementation delegates sparse contraction to SparseMat.tprod and propagates surviving circular metadata from both operands. Covered by finite matrix contraction, multidimensional dense-reference contraction, right-operand metadata, and Inf-times-implicit-zero cases. The MATLAB source has reversed `isa` argument order in this method; Python follows the evident intended subclass test.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:183-186.",
+        "Compared with CircularSparseMat.m:97-113."
+      ],
+      "recommended_test": "Differential-test empty extents, multiple circular dims, mixed slices/indices, duplicate indices, and assignment expansion.",
+      "baseline_status": "unimplemented",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:183-186.",
+        "Compared with CircularSparseMat.m:97-113.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "CircularSparseMat.__repr__",
+      "line": 188,
+      "end_line": 189,
+      "status": "not_applicable",
+      "category": "python_only:adapter",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/CircularSparseMat.m",
+        "method": "display",
+        "lines": [
+          [
+            193,
+            212
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Python debug repr is not the MATLAB display routine or a biological algorithm.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:188-189.",
+        "Compared with CircularSparseMat.m:193-212."
+      ],
+      "recommended_test": "Retain wrapped-coordinate and circular-metadata tests.",
+      "baseline_status": "not_applicable",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:188-189.",
+        "Compared with CircularSparseMat.m:193-212.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "circular_sparsemat.py",
+      "function": "_dims",
+      "line": 192,
+      "end_line": 194,
+      "status": "not_applicable",
+      "category": "python_only:adapter",
+      "matlab_source": null,
+      "mathworks_doc_urls": [],
+      "rationale": "Python input normalization helper with no standalone MATLAB counterpart.",
+      "evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:192-194."
+      ],
+      "recommended_test": "Retain wrapped-coordinate and circular-metadata tests.",
+      "baseline_status": "not_applicable",
+      "round2_evidence": [
+        "Inspected wholecell_py/circular_sparsemat.py:192-194.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.__init__",
+      "line": 16,
+      "end_line": 31,
+      "status": "documented_rng_difference",
+      "category": "documented_rng_difference",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:39-41",
+        "method": "RandStream.__init__"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/randstream.html"
+      ],
+      "rationale": "Uses NumPy PCG64 regardless of MATLAB generator type; Seed/name-value parsing is retained, but the engine and state format are intentionally independent and pointwise draws are not comparable.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:16-31 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Test same-seed repeatability for this backend and verify provenance labels identify NumPy PCG64 rather than the passed MATLAB type.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:16-31 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream._shape",
+      "line": 34,
+      "end_line": 46,
+      "status": "matched",
+      "category": "documented_rng_difference",
+      "matlab_source": {
+        "file": null,
+        "method": "RandStream._shape"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/rand.html"
+      ],
+      "rationale": "MATLAB and Python both interpret a lone scalar dimension as n-by-n and explicit dimensions/shape vectors as requested. Python retains trailing singleton dimensions in ndarray shape while MATLAB suppresses trailing singleton dimensions; audited model calls use scalar or at most two dimensions.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:34-46 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Test rand/randn/randi with scalar dimensions, shape vectors, zero dimensions and the model-used column-vector calls; keep engine identity separate from distribution checks.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:34-46 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.reset",
+      "line": 48,
+      "end_line": 52,
+      "status": "documented_rng_difference",
+      "category": "documented_rng_difference",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:45-47",
+        "method": "RandStream.reset"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/randstream.reset.html"
+      ],
+      "rationale": "Reset restarts the same Python PCG64 sequence or requested Python seed; exact MATLAB generator state/draws are not reproduced.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:48-52 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Test reset with/without explicit seed against a fresh same-seed Python stream; do not claim MATLAB state compatibility.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:48-52 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.save",
+      "line": 54,
+      "end_line": 55,
+      "status": "not_applicable",
+      "category": "python_only:checkpoint_rng_state",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:273-279",
+        "method": "RandStream.save"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/randstream.html"
+      ],
+      "rationale": "Exports the NumPy bit-generator state for this port checkpoint protocol; the state payload is not MATLAB RandStream.State.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:54-55 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Round-trip through checkpoint save/load and validate provenance identifies the NumPy engine.",
+      "baseline_status": "not_applicable",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:54-55 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.restore",
+      "line": 57,
+      "end_line": 58,
+      "status": "not_applicable",
+      "category": "python_only:checkpoint_rng_state",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:273-279",
+        "method": "RandStream.restore"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/randstream.html"
+      ],
+      "rationale": "Restores NumPy bit-generator state created by this Python stream; it does not accept MATLAB generator state.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:57-58 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Restore saved Python stream state and compare subsequent rand/randperm draws.",
+      "baseline_status": "not_applicable",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:57-58 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.state",
+      "line": 61,
+      "end_line": 62,
+      "status": "not_applicable",
+      "category": "python_only:checkpoint_rng_state",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:273-279",
+        "method": "RandStream.state"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/randstream.html"
+      ],
+      "rationale": "Getter/setter expose NumPy state for Python checkpoints; their serialized representation differs from MATLAB state.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:61-62 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Verify property assignment and explicit save/restore produce same future Python draws.",
+      "baseline_status": "not_applicable",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:61-62 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.state",
+      "line": 65,
+      "end_line": 66,
+      "status": "not_applicable",
+      "category": "python_only:checkpoint_rng_state",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:273-279",
+        "method": "RandStream.state"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/randstream.html"
+      ],
+      "rationale": "Getter/setter expose NumPy state for Python checkpoints; their serialized representation differs from MATLAB state.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:65-66 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Verify property assignment and explicit save/restore produce same future Python draws.",
+      "baseline_status": "not_applicable",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:65-66 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.rand",
+      "line": 68,
+      "end_line": 69,
+      "status": "documented_rng_difference",
+      "category": "documented_rng_difference",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:78-80",
+        "method": "RandStream.rand"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/rand.html"
+      ],
+      "rationale": "Uniform distribution and requested shape match the model contract; NumPy PCG64 sequence differs from MATLAB RandStream.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:68-69 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Check range, output shape and statistical uniformity; test seeded reproducibility only within NumPy.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:68-69 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.randn",
+      "line": 71,
+      "end_line": 72,
+      "status": "documented_rng_difference",
+      "category": "documented_rng_difference",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:91-93",
+        "method": "RandStream.randn"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/randn.html"
+      ],
+      "rationale": "Standard normal law and requested shape match; engine and normal transform differ from MATLAB.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:71-72 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Check shape, mean/variance over large sample and Python seed repeatability; no bitwise MATLAB test.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:71-72 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.randi",
+      "line": 74,
+      "end_line": 81,
+      "status": "documented_rng_difference",
+      "category": "documented_rng_difference",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:82-89",
+        "method": "RandStream.randi"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/randi.html"
+      ],
+      "rationale": "Inclusive 1..imax integer law and imax=1 no-draw special case match source; seeded sequence differs.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:74-81 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Check inclusive endpoints, uniformity, shape, and no draw advancement for imax=1.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:74-81 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.randperm",
+      "line": 83,
+      "end_line": 88,
+      "status": "documented_rng_difference",
+      "category": "documented_rng_difference",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:95-97",
+        "method": "RandStream.randperm"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/randperm.html"
+      ],
+      "rationale": "Uniform permutation/subsample law and one-based indices match source; order for a given seed differs.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:83-88 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Check uniqueness, bounds, k-subset behavior, edge n/k, and Python seed repeatability.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:83-88 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.binornd",
+      "line": 90,
+      "end_line": 92,
+      "status": "documented_rng_difference",
+      "category": "documented_rng_difference",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:139-149",
+        "method": "RandStream.binornd"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/stats/binornd.html"
+      ],
+      "rationale": "Supported model parameter shapes use the binomial law; only RNG engine/draw sequence differs. Matrix orientation/advanced toolbox parameters remain outside current caller contract.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:90-92 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Check n and p scalar expansion and same-shape parameter arrays, output dimensions, and binomial distribution. Cross-shaped NumPy broadcasting is outside current call contracts.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:90-92 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.poissrnd",
+      "line": 94,
+      "end_line": 95,
+      "status": "documented_rng_difference",
+      "category": "documented_rng_difference",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:115-125",
+        "method": "RandStream.poissrnd"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/stats/poissrnd.html"
+      ],
+      "rationale": "Supported scalar/array rates use the Poisson law and expected array dimensions; engine/draw sequence differs.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:94-95 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Check output shape, scalar/vector lambda cases and sample mean/variance.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:94-95 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.mnrnd",
+      "line": 97,
+      "end_line": 108,
+      "status": "documented_rng_difference",
+      "category": "source_wrapper_limit",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:127-137",
+        "method": "RandStream.mnrnd"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/stats/mnrnd.html"
+      ],
+      "rationale": "Now supports MATLAB row-wise probability matrices and vector trial counts; valid probability rows draw multinomial counts, invalid rows return NaN rather than silently normalizing. Regression checks row totals and NaN rows; engine differs.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:97-108 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Keep current call-site vectors covered; add matrix-P and invalid-sum tests only if the broader MATLAB mnrnd API is part of the supported contract.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:97-108 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.random",
+      "line": 110,
+      "end_line": 136,
+      "status": "not_verified",
+      "category": "source_wrapper_limit",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:99-113",
+        "method": "RandStream.random"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/rand.html"
+      ],
+      "rationale": "Implemented aliases for Poisson, binomial, normal, and exponential with model-used shape handling. Generic MATLAB Statistics Toolbox distribution support and all parameter broadcasting are not ported.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:110-136 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Audit actual model name/parameter call sites; verify those four aliases and scalar/array shape contracts separately.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:110-136 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.randsample",
+      "line": 138,
+      "end_line": 180,
+      "status": "documented_rng_difference",
+      "category": "documented_rng_difference",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:151-203",
+        "method": "RandStream.randsample"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/stats/randsample.html"
+      ],
+      "rationale": "Default no-replacement behavior matches MathWorks; weighted wrapper matches the source algorithm for supported scalar/vector weights and avoids mutating caller weights. Selection sequence differs by engine.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:138-180 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Targeted tests: test_weighted_without_replacement_does_not_mutate_input_weights and test_randsample_defaults_to_without_replacement."
+      ],
+      "recommended_test": "Tests verify weighted no-replacement uniqueness, caller-weight immutability and default no-replacement behavior; add edge fixtures for zero/max-float weights and k limits.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:138-180 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Targeted tests: test_weighted_without_replacement_does_not_mutate_input_weights and test_randsample_defaults_to_without_replacement.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.randCounts",
+      "line": 182,
+      "end_line": 208,
+      "status": "documented_rng_difference",
+      "category": "documented_rng_difference",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:208-232",
+        "method": "RandStream.randCounts"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/double.randi.html"
+      ],
+      "rationale": "Count-weighted sampling without replacement and complement branch match source algorithm; only seeded draws differ.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:182-208 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Verify selected total, per-category capacity, orientation and complement branch at N greater than half.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:182-208 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.stochasticRound",
+      "line": 210,
+      "end_line": 219,
+      "status": "documented_rng_difference",
+      "category": "documented_rng_difference",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:235-240",
+        "method": "RandStream.stochasticRound"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/double.round.html"
+      ],
+      "rationale": "Each finite element rounds up with probability equal to its fractional part and otherwise down; random sequence differs.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:210-219 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Check exact probability through seeded sample frequencies, vector shapes, negative fractions, integers and NaN/Inf handling.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:210-219 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.randomlySelectNRows",
+      "line": 221,
+      "end_line": 229,
+      "status": "documented_rng_difference",
+      "category": "documented_rng_difference",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:248-252",
+        "method": "RandStream.randomlySelectNRows"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/stats/randsample.html"
+      ],
+      "rationale": "Samples without replacement, sorts one-based row indices, and returns sorted rows; only engine draws differ.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:221-229 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Check empty, all rows, k cap and sorted index/output correspondence.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:221-229 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "randstream.py",
+      "function": "RandStream.randomlySelectRows",
+      "line": 231,
+      "end_line": 236,
+      "status": "documented_rng_difference",
+      "category": "documented_rng_difference",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/RandStream.m:242-246",
+        "method": "RandStream.randomlySelectRows"
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/double.round.html"
+      ],
+      "rationale": "Uses stochasticRound followed by sorted no-replacement selection; only random engine draws differ.",
+      "evidence": [
+        "Python source wholecell_py/randstream.py:231-236 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it."
+      ],
+      "recommended_test": "Check selected-count distribution around fractional expected counts and row/index correspondence.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Python source wholecell_py/randstream.py:231-236 explicitly wraps NumPy Generator.",
+        "Original RandStream.m constructs underlying MATLAB RandStream and delegates draw operations to it.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__init__",
+      "line": 17,
+      "end_line": 75,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "constructor",
+        "lines": [
+          44,
+          121
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Constructor validates dimensions/coordinates, then applies this custom class's `unique(subs,'rows','last')` duplicate policy at MATLAB `SparseMat.m:80-87`, with a warning, before normalization. Python's coordinate constructor keeps the last duplicate value; this is not MATLAB built-in `sparse` duplicate summation.",
+      "evidence": [
+        "Inspected Python constructor at wholecell_py/sparsemat.py:17-75.",
+        "Compared with custom MATLAB SparseMat.m:44-121 and duplicate policy at 80-87."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected Python constructor at wholecell_py/sparsemat.py:17-75.",
+        "Compared with custom MATLAB SparseMat.m:44-121 and duplicate policy at 80-87.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat._deduplicate_last",
+      "line": 77,
+      "end_line": 82,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "constructor duplicate handling",
+        "lines": [
+          83,
+          88
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Matches the custom MATLAB `SparseMat` constructor: `unique(subs,'rows','last')` keeps the last duplicate coordinate row and corresponding value (SparseMat.m:80-87); MATLAB also warns on repeated coordinates.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:78-84.",
+        "Compared with custom MATLAB SparseMat.m:80-87."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:78-84.",
+        "Compared with custom MATLAB SparseMat.m:80-87.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat._normalize",
+      "line": 84,
+      "end_line": 96,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "normalize",
+        "lines": [
+          843,
+          888
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Constructor normalization removes explicit zeros, sorts by MATLAB column-major linear order, and trims trailing singleton axes. Public `normalize` now covers its flag-controlled source behavior, but mutated malformed public arrays and all flag combinations lack differential fixtures.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:84-96.",
+        "Compared with MATLAB SparseMat.m:843-888."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:84-96.",
+        "Compared with MATLAB SparseMat.m:843-888.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.copy",
+      "line": 98,
+      "end_line": 99,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "SparseMat constructor copy",
+        "lines": [
+          44,
+          121
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Python creates independent copies of siz/subs/vals. MATLAB SparseMat is a value class and its constructor copies logical sparse state.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:98-99.",
+        "Compared with MATLAB SparseMat.m:44-121."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:98-99.",
+        "Compared with MATLAB SparseMat.m:44-121.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.inds",
+      "line": 102,
+      "end_line": 103,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "get.inds",
+        "lines": [
+          126,
+          128
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Returns sub2ind of current coordinate rows; same 1-based column-major key.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:102-103.",
+        "Compared with MATLAB SparseMat.m:126-128."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:102-103.",
+        "Compared with MATLAB SparseMat.m:126-128.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.size",
+      "line": 105,
+      "end_line": 110,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "size",
+        "lines": [
+          149,
+          159
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/size.html"
+      ],
+      "rationale": "One-based dimension query and implicit trailing dimensions of size 1 match.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:105-110.",
+        "Compared with MATLAB SparseMat.m:149-159."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:105-110.",
+        "Compared with MATLAB SparseMat.m:149-159.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.ndims",
+      "line": 112,
+      "end_line": 113,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "ndims",
+        "lines": [
+          161,
+          163
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Dimension count is length of the stored size vector.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:112-113.",
+        "Compared with MATLAB SparseMat.m:161-163."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:112-113.",
+        "Compared with MATLAB SparseMat.m:161-163.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.numel",
+      "line": 115,
+      "end_line": 116,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "numel",
+        "lines": [
+          137,
+          139
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Product of dimensions.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:115-116.",
+        "Compared with MATLAB SparseMat.m:137-139."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:115-116.",
+        "Compared with MATLAB SparseMat.m:137-139.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.nnz",
+      "line": 118,
+      "end_line": 119,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "nnz",
+        "lines": [
+          141,
+          143
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Number of stored nonzero rows.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:118-119.",
+        "Compared with MATLAB SparseMat.m:141-143."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:118-119.",
+        "Compared with MATLAB SparseMat.m:141-143.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.length",
+      "line": 121,
+      "end_line": 122,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "length",
+        "lines": [
+          145,
+          147
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Maximum dimension extent.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:121-122.",
+        "Compared with MATLAB SparseMat.m:145-147."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:121-122.",
+        "Compared with MATLAB SparseMat.m:145-147.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.isempty",
+      "line": 124,
+      "end_line": 125,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "isempty",
+        "lines": [
+          133,
+          135
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "True exactly when not all dimension extents are nonzero.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:124-125.",
+        "Compared with MATLAB SparseMat.m:133-135."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:124-125.",
+        "Compared with MATLAB SparseMat.m:133-135.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.full",
+      "line": 127,
+      "end_line": 133,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "full/cast",
+        "lines": [
+          2799,
+          2801
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/full.html"
+      ],
+      "rationale": "Densifies at the stored dimensions while preserving `vals` class, including empty logical arrays; regression added for empty logical dtype.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:127-133.",
+        "Compared with MATLAB SparseMat.m:2799-2801."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:127-133.",
+        "Compared with MATLAB SparseMat.m:2799-2801.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.find",
+      "line": 135,
+      "end_line": 136,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "find",
+        "lines": [
+          2740,
+          2743
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/find.html"
+      ],
+      "rationale": "Returns stored coordinates and values.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:135-136.",
+        "Compared with MATLAB SparseMat.m:2740-2743."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:135-136.",
+        "Compared with MATLAB SparseMat.m:2740-2743.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.get_coords",
+      "line": 138,
+      "end_line": 187,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "subsref / ismember_subs",
+        "lines": [
+          673,
+          710
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/ismember.html"
+      ],
+      "rationale": "Coordinates now reject fractional/nonfinite and out-of-range indices as source subsref does. Coordinate-read dtype on mixed/all-miss queries remains a Python adapter difference; current tests preserve port-facing dtype behavior.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:138-187.",
+        "Compared with MATLAB SparseMat.m:673-710."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "mismatched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:138-187.",
+        "Compared with MATLAB SparseMat.m:673-710.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.set_coords",
+      "line": 189,
+      "end_line": 213,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "subsasgn",
+        "lines": [
+          324,
+          672
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Uses coordinate replacement with last-write-wins and zero deletion. Python returns an independent SparseMat, while exact MATLAB range-expansion/broadcasting and error behavior are not fully implemented by this coordinate-only API.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:189-213.",
+        "Compared with MATLAB SparseMat.m:324-672."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:189-213.",
+        "Compared with MATLAB SparseMat.m:324-672.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.take",
+      "line": 215,
+      "end_line": 223,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "subsref",
+        "lines": [
+          673,
+          832
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Python gathers inclusive one-based ranges in ij/F order; MATLAB supports colon, repeated, and shape-preserving subscript semantics beyond the narrow gather API.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:215-223.",
+        "Compared with MATLAB SparseMat.m:673-832."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:215-223.",
+        "Compared with MATLAB SparseMat.m:673-832.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.assign",
+      "line": 225,
+      "end_line": 226,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "subsasgn",
+        "lines": [
+          324,
+          672
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Alias of coordinate set; MATLAB subscript assignment supports broader expansion, range, and broadcasting semantics.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:225-226.",
+        "Compared with MATLAB SparseMat.m:324-672."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:225-226.",
+        "Compared with MATLAB SparseMat.m:324-672.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.sub2ind",
+      "line": 228,
+      "end_line": 237,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "sub2ind",
+        "lines": [
+          282,
+          289
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/sub2ind.html"
+      ],
+      "rationale": "Valid one-based coordinate conversion uses the MATLAB column-major formula; helper range/error differences on malformed inputs remain outside supported index domain.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:228-237.",
+        "Compared with MATLAB SparseMat.m:282-289."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "mismatched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:228-237.",
+        "Compared with MATLAB SparseMat.m:282-289.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.ind2sub",
+      "line": 239,
+      "end_line": 246,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "ind2sub",
+        "lines": [
+          291,
+          310
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/ind2sub.html"
+      ],
+      "rationale": "Valid one-based linear indices map in MATLAB column-major order; Python rejects out-of-range indices while custom MATLAB helper can yield out-of-range coordinates.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:239-246.",
+        "Compared with MATLAB SparseMat.m:291-310."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:239-246.",
+        "Compared with MATLAB SparseMat.m:291-310.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.reshape",
+      "line": 248,
+      "end_line": 258,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "reshape",
+        "lines": [
+          165,
+          190
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/double.reshape.html"
+      ],
+      "rationale": "Valid sizes preserve MATLAB columnwise linear ordering; Python `-1` convenience and zero-size/error corner cases differ from the source signature.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:248-258.",
+        "Compared with MATLAB SparseMat.m:165-190."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:248-258.",
+        "Compared with MATLAB SparseMat.m:165-190.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md.",
+        "Compared SparseMat.m reshape:165-190, permute:243-265, squeeze:267-280, sum:2544-2575 and CircularSparseMat.m normalize behavior.",
+        "tests/test_sparsemat.py::test_ranges_reshape_permute_sum_and_value_semantics",
+        "tests/test_circular_sparsemat.py::test_reshape_returns_circular_type_and_clears_axis_metadata"
+      ],
+      "reviewed_in_round2": true,
+      "round2_status": "matched",
+      "round2_notes": "For supported positive integer size vectors, reshaping keeps MATLAB column-major element order and canonicalizes trailing singleton dimensions as source normalize(reSize=true) does. CircularSparseMat reshape clears circularDims because source reshape passes oldDims=zeros. MATLAB unknown dimensions use [] while Python exposes -1; that signature difference remains documented.",
+      "round2_tests": [
+        "tests/test_sparsemat.py::test_ranges_reshape_permute_sum_and_value_semantics",
+        "tests/test_circular_sparsemat.py::test_reshape_returns_circular_type_and_clears_axis_metadata"
+      ]
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.permute",
+      "line": 260,
+      "end_line": 264,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "permute",
+        "lines": [
+          243,
+          265
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Valid exact dimension permutations reorder coordinates/sizes correctly. Trailing singleton dimension extensions and malformed permutations have not been exhaustively matched.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:260-264.",
+        "Compared with MATLAB SparseMat.m:243-265."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:260-264.",
+        "Compared with MATLAB SparseMat.m:243-265.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md.",
+        "Compared SparseMat.m reshape:165-190, permute:243-265, squeeze:267-280, sum:2544-2575 and CircularSparseMat.m normalize behavior.",
+        "tests/test_sparsemat.py::test_ranges_reshape_permute_sum_and_value_semantics",
+        "tests/test_circular_sparsemat.py::test_permute_remaps_circular_axes_by_original_dimension"
+      ],
+      "reviewed_in_round2": true,
+      "round2_status": "matched",
+      "round2_notes": "Valid permutations reorder coordinates and sizes; CircularSparseMat maps each original circular axis to its output axis using source oldDims semantics. SparseMat still canonicalizes trailing singleton dimensions at construction.",
+      "round2_tests": [
+        "tests/test_sparsemat.py::test_ranges_reshape_permute_sum_and_value_semantics",
+        "tests/test_circular_sparsemat.py::test_permute_remaps_circular_axes_by_original_dimension"
+      ]
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.transpose",
+      "line": 266,
+      "end_line": 269,
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "transpose",
+        "lines": [
+          232,
+          237
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "For 2-D SparseMat, delegates to dimension permutation [2,1]; higher-dimensional transpose errors.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:266-269.",
+        "Compared with MATLAB SparseMat.m:232-237."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "matched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:266-269.",
+        "Compared with MATLAB SparseMat.m:232-237.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.squeeze",
+      "line": 273,
+      "end_line": 277,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "squeeze",
+        "lines": [
+          267,
+          280
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Removes singleton axes and keeps minimum rank two; fixed duplicate-coordinate padding. Empty and all-singleton edge behavior still needs source fixtures.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:273-277.",
+        "Compared with MATLAB SparseMat.m:267-280.",
+        "Updated during post-review source-backed correction reconciliation on 2026-11-01; targeted regression tests cover the listed fixed cases."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:273-277.",
+        "Compared with MATLAB SparseMat.m:267-280.",
+        "Updated during post-review source-backed correction reconciliation on 2026-11-01; targeted regression tests cover the listed fixed cases.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md.",
+        "Compared SparseMat.m reshape:165-190, permute:243-265, squeeze:267-280, sum:2544-2575 and CircularSparseMat.m normalize behavior.",
+        "tests/test_sparsemat.py::test_squeeze_singleton_leading_dimension_pads_coordinates_once",
+        "tests/test_sparsemat.py::test_squeeze_retains_two_non_singleton_dimensions_after_middle_singleton",
+        "tests/test_circular_sparsemat.py::test_squeeze_drops_singleton_axes_and_remaps_remaining_circular_axes"
+      ],
+      "reviewed_in_round2": true,
+      "round2_status": "matched",
+      "round2_notes": "Removes singleton axes while keeping minimum rank two. CircularSparseMat remaps only surviving circular axes; any axis introduced for minimum rank has oldDims=0 and is not circular. Trailing singleton dimensions follow SparseMat.m normalize behavior.",
+      "round2_tests": [
+        "tests/test_sparsemat.py::test_squeeze_singleton_leading_dimension_pads_coordinates_once",
+        "tests/test_sparsemat.py::test_squeeze_retains_two_non_singleton_dimensions_after_middle_singleton",
+        "tests/test_circular_sparsemat.py::test_squeeze_drops_singleton_axes_and_remaps_remaining_circular_axes"
+      ]
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.sum",
+      "line": 279,
+      "end_line": 292,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "sum",
+        "lines": [
+          2544,
+          2575
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Sparse grouping matches source for numeric values; bool accumulators now count true values numerically and dimension>ndims returns a copy. Empty values, integer overflow/type promotion, and CircularSparseMat sum metadata remain unverified.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:279-292.",
+        "Compared with MATLAB SparseMat.m:2544-2575.",
+        "Updated during post-review source-backed correction reconciliation on 2026-11-01; targeted regression tests cover the listed fixed cases."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:279-292.",
+        "Compared with MATLAB SparseMat.m:2544-2575.",
+        "Updated during post-review source-backed correction reconciliation on 2026-11-01; targeted regression tests cover the listed fixed cases.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md.",
+        "Compared SparseMat.m reshape:165-190, permute:243-265, squeeze:267-280, sum:2544-2575 and CircularSparseMat.m normalize behavior.",
+        "tests/test_sparsemat.py::test_boolean_sum_counts_true_values_numerically",
+        "tests/test_sparsemat.py::test_sum_beyond_ndims_returns_independent_value_copy",
+        "tests/test_circular_sparsemat.py::test_sum_uses_wholecell_remaining_dimensions_for_circular_metadata"
+      ],
+      "reviewed_in_round2": true,
+      "round2_status": "not_verified",
+      "round2_notes": "For ordinary finite runtime values, reduction matches SparseMat.m grouping; bool values are accumulated numerically and dim>ndims returns an independent copy. CircularSparseMat follows the literal source constructor argument: sum assigns every axis except dim as circular, regardless of prior circularDims. Integer overflow and MATLAB accumarray type-promotion edge cases remain unverified.",
+      "round2_tests": [
+        "tests/test_sparsemat.py::test_boolean_sum_counts_true_values_numerically",
+        "tests/test_sparsemat.py::test_sum_beyond_ndims_returns_independent_value_copy",
+        "tests/test_circular_sparsemat.py::test_sum_uses_wholecell_remaining_dimensions_for_circular_metadata"
+      ]
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.collapse",
+      "line": 294,
+      "end_line": 306,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "collapse",
+        "lines": [
+          2682,
+          2712
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "No-dimension call now returns sum(vals) per source; reductions use source dimension semantics. Full negative-axis, NaN, and shape corner cases remain unverified.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:294-306.",
+        "Compared with MATLAB SparseMat.m:2682-2712.",
+        "Updated during post-review source-backed correction reconciliation on 2026-11-01; targeted regression tests cover the listed fixed cases."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:294-306.",
+        "Compared with MATLAB SparseMat.m:2682-2712.",
+        "Updated during post-review source-backed correction reconciliation on 2026-11-01; targeted regression tests cover the listed fixed cases.",
+        "Round 2 source comparison and targeted regression review; see report_round2_sparse.md."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__repr__",
+      "line": 308,
+      "end_line": 309,
+      "status": "not_applicable",
+      "category": "python_only:diagnostics",
+      "matlab_source": null,
+      "mathworks_doc_urls": [],
+      "rationale": "Python diagnostic string formatting has no MATLAB biological algorithm counterpart.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:308-309."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "not_applicable",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:308-309.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__getitem__",
+      "line": 311,
+      "end_line": 312,
+      "status": "mismatched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "subsref",
+        "lines": [
+          673,
+          832
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Python only accepts coordinate arrays here; MATLAB overload supports both coordinate-matrix membership and multi-subscript range indexing.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:311-312.",
+        "Compared with MATLAB SparseMat.m:673-832."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "mismatched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:311-312.",
+        "Compared with MATLAB SparseMat.m:673-832.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence.",
+        "tests/test_sparsemat.py::test_coordinate_reads_reflect_public_array_mutations_and_invalid_rows",
+        "tests/test_sparsemat.py::test_coordinate_read_dtype_matches_numpy_list_inference"
+      ],
+      "reviewed_in_round2": true,
+      "round2_status": "mismatched",
+      "round2_notes": "The supported one-argument coordinate-matrix form delegates to get_coords and matches source values, but MATLAB also implements multidimensional range selectors that return SparseMat. Python currently keeps coordinate-only `__getitem__`; no concrete defect was found in the supported coordinate form. Full MATLAB range selection remains an API gap.",
+      "round2_tests": [
+        "tests/test_sparsemat.py::test_coordinate_reads_reflect_public_array_mutations_and_invalid_rows",
+        "tests/test_sparsemat.py::test_coordinate_read_dtype_matches_numpy_list_inference"
+      ]
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__setitem__",
+      "line": 314,
+      "end_line": 316,
+      "status": "mismatched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "subsasgn",
+        "lines": [
+          324,
+          672
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Python mutates the receiver in-place, while MATLAB SparseMat is a value class; does not implement MATLAB full range/array assignment.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:314-316.",
+        "Compared with MATLAB SparseMat.m:324-672."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "mismatched",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:314-316.",
+        "Compared with MATLAB SparseMat.m:324-672.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence.",
+        "tests/test_sparsemat.py::test_coordinate_reads_reflect_public_array_mutations_and_invalid_rows"
+      ],
+      "reviewed_in_round2": true,
+      "round2_status": "mismatched",
+      "round2_notes": "Coordinate-matrix writes use set_coords and mutate the Python receiver as a normal mutable container. MATLAB subsasgn supports vector/range assignment under value-class semantics; that full syntax/ownership contract is not implemented. No defect was demonstrated for the coordinate write adapter.",
+      "round2_tests": [
+        "tests/test_sparsemat.py::test_coordinate_reads_reflect_public_array_mutations_and_invalid_rows"
+      ]
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat._binary",
+      "line": 318,
+      "end_line": 346,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "plus/minus/times/rdivide and relational methods",
+        "lines": [
+          1456,
+          1583
+        ]
+      },
+      "mathworks_doc_urls": [],
+      "rationale": "Dense tests and source review now cover implicit-zero equality, addition and division/Inf cases corrected to the custom MATLAB SparseMat operators. MATLAB scalar expansion, logical/integer dtype, NaN and remaining shape edge cases are still not fully verified.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:318-346.",
+        "Compared with MATLAB SparseMat.m:1456-1583.",
+        "Updated during post-review source-backed correction reconciliation on 2026-11-01; targeted regression tests cover the listed fixed cases.",
+        "Post-review source fixes and 22 SparseMat/CircularSparseMat targeted tests reported by root."
+      ],
+      "recommended_test": "Add direct MATLAB-versus-Python fixtures for source-described edge behavior; current status is based on algorithm review, not test pass alone.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:318-346.",
+        "Compared with MATLAB SparseMat.m:1456-1583.",
+        "Updated during post-review source-backed correction reconciliation on 2026-11-01; targeted regression tests cover the listed fixed cases.",
+        "Post-review source fixes and 22 SparseMat/CircularSparseMat targeted tests reported by root.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__add__",
+      "line": 348,
+      "end_line": 349,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "plus",
+        "lines": [
+          [
+            1456,
+            1504
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:348-349.",
+        "Compared with SparseMat.m:1456-1504 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:348-349.",
+        "Compared with SparseMat.m:1456-1504 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__radd__",
+      "line": 351,
+      "end_line": 352,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "plus",
+        "lines": [
+          [
+            1456,
+            1504
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:351-352.",
+        "Compared with SparseMat.m:1456-1504 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:351-352.",
+        "Compared with SparseMat.m:1456-1504 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__sub__",
+      "line": 354,
+      "end_line": 355,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "minus",
+        "lines": [
+          [
+            1505,
+            1508
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:354-355.",
+        "Compared with SparseMat.m:1505-1508 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:354-355.",
+        "Compared with SparseMat.m:1505-1508 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__rsub__",
+      "line": 357,
+      "end_line": 358,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "minus",
+        "lines": [
+          [
+            1505,
+            1508
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:357-358.",
+        "Compared with SparseMat.m:1505-1508 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:357-358.",
+        "Compared with SparseMat.m:1505-1508 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__mul__",
+      "line": 360,
+      "end_line": 361,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "times",
+        "lines": [
+          [
+            1509,
+            1566
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:360-361.",
+        "Compared with SparseMat.m:1509-1566 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:360-361.",
+        "Compared with SparseMat.m:1509-1566 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__rmul__",
+      "line": 363,
+      "end_line": 364,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "times",
+        "lines": [
+          [
+            1509,
+            1566
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:363-364.",
+        "Compared with SparseMat.m:1509-1566 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:363-364.",
+        "Compared with SparseMat.m:1509-1566 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__truediv__",
+      "line": 366,
+      "end_line": 367,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "rdivide",
+        "lines": [
+          [
+            1567,
+            1583
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:366-367.",
+        "Compared with SparseMat.m:1567-1583 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:366-367.",
+        "Compared with SparseMat.m:1567-1583 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__neg__",
+      "line": 369,
+      "end_line": 370,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "uminus",
+        "lines": [
+          [
+            1449,
+            1452
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:369-370.",
+        "Compared with SparseMat.m:1449-1452 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:369-370.",
+        "Compared with SparseMat.m:1449-1452 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__pos__",
+      "line": 372,
+      "end_line": 373,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "uplus",
+        "lines": [
+          [
+            1453,
+            1455
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:372-373.",
+        "Compared with SparseMat.m:1453-1455 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:372-373.",
+        "Compared with SparseMat.m:1453-1455 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__eq__",
+      "line": 375,
+      "end_line": 376,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "eq",
+        "lines": [
+          [
+            1828,
+            1871
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:375-376.",
+        "Compared with SparseMat.m:1828-1871 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:375-376.",
+        "Compared with SparseMat.m:1828-1871 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__ne__",
+      "line": 378,
+      "end_line": 379,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "ne",
+        "lines": [
+          [
+            1872,
+            1919
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:378-379.",
+        "Compared with SparseMat.m:1872-1919 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:378-379.",
+        "Compared with SparseMat.m:1872-1919 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__lt__",
+      "line": 381,
+      "end_line": 382,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "lt",
+        "lines": [
+          [
+            2075,
+            2128
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:381-382.",
+        "Compared with SparseMat.m:2075-2128 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:381-382.",
+        "Compared with SparseMat.m:2075-2128 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__le__",
+      "line": 384,
+      "end_line": 385,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "le",
+        "lines": [
+          [
+            2023,
+            2074
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:384-385.",
+        "Compared with SparseMat.m:2023-2074 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:384-385.",
+        "Compared with SparseMat.m:2023-2074 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__gt__",
+      "line": 387,
+      "end_line": 388,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "gt",
+        "lines": [
+          [
+            1972,
+            2022
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:387-388.",
+        "Compared with SparseMat.m:1972-2022 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:387-388.",
+        "Compared with SparseMat.m:1972-2022 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__ge__",
+      "line": 390,
+      "end_line": 391,
+      "status": "not_verified",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "ge",
+        "lines": [
+          [
+            1920,
+            1971
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/plus.html"
+      ],
+      "rationale": "Maps Python operator to MATLAB SparseMat elementwise method. Need cross-language edge fixtures for implicit zeros, scalar expansion, type promotion, NaNs and output shape; randomized dense tests are not proof of full algorithm equivalence.",
+      "evidence": [
+        "Inspected wholecell_py/sparsemat.py:390-391.",
+        "Compared with SparseMat.m:1920-1971 and its sparse coordinate union logic."
+      ],
+      "recommended_test": "Run MATLAB oracle fixtures on scalar/dense/sparse operands, mixed value classes, implicit-zero comparisons, NaNs and shape corner cases.",
+      "baseline_status": "not_verified",
+      "round2_evidence": [
+        "Inspected wholecell_py/sparsemat.py:390-391.",
+        "Compared with SparseMat.m:1920-1971 and its sparse coordinate union logic.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.__getattr__",
+      "line": 393,
+      "end_line": 396,
+      "status": "not_applicable",
+      "category": "python_only:diagnostics",
+      "matlab_source": null,
+      "mathworks_doc_urls": [],
+      "rationale": "Python guard for unported method names; MATLAB class dispatch does not use this fallback.",
+      "evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:393-396."
+      ],
+      "recommended_test": "Retain constructor/coordinate-order regression coverage.",
+      "baseline_status": "not_applicable",
+      "round2_evidence": [
+        "Inspected Python implementation at wholecell_py/sparsemat.py:393-396.",
+        "Round 2 inspected source reference; no additional behavior was asserted beyond baseline evidence."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.normalize",
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "normalize",
+        "lines": [
+          [
+            843,
+            900
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/double.reshape.html"
+      ],
+      "rationale": "New return-copy implementation ports reSize/reFind/reSort behavior: vector-size padding, trailing singleton trimming, explicit-zero removal, and MATLAB column-major sorting. `oldDims` is accepted for subclass mapping. Flag combinations beyond focused fixtures remain a limitation.",
+      "evidence": [
+        "Implemented in wholecell_py/sparsemat.py: normalize.",
+        "tests/test_circular_sparsemat.py::test_normalize_maps_circular_dimensions_after_squeezing.",
+        "tests/test_sparsemat.py::test_normalize_flag_behavior_and_value_semantics."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "SparseMat.tprod",
+      "status": "matched",
+      "category": "source_algorithm",
+      "matlab_source": {
+        "file": "../../WholeCell/src/+edu/+stanford/+covert/+util/SparseMat.m",
+        "method": "tprod",
+        "lines": [
+          [
+            1598,
+            1682
+          ]
+        ]
+      },
+      "mathworks_doc_urls": [
+        "https://www.mathworks.com/help/matlab/ref/double.reshape.html"
+      ],
+      "rationale": "New sparse coordinate join contracts paired one-based axes, sums duplicate outputs, propagates NaN contributions, and handles Inf multiplied by implicit zero. Verified finite 2-D and 3-D cases against NumPy dense references plus Inf/zero regression; this is not a proof for extreme memory sizes or nonnumeric dtypes.",
+      "evidence": [
+        "Implemented in wholecell_py/sparsemat.py: tprod.",
+        "tests/test_sparsemat.py::test_tprod_multidimensional_contract_matches_dense_reference.",
+        "tests/test_circular_sparsemat.py::test_tprod_handles_nan_and_infinity_times_implicit_zero."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "_coordinate_grid",
+      "status": "not_applicable",
+      "category": "python_only:implementation_helper",
+      "matlab_source": null,
+      "mathworks_doc_urls": [],
+      "rationale": "Python-only coordinate enumerator used for implicit-zero IEEE cases in SparseMat.tprod.",
+      "evidence": [
+        "Inspected tprod implementation and targeted tests."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "_stored_at_free",
+      "status": "not_applicable",
+      "category": "python_only:implementation_helper",
+      "matlab_source": null,
+      "mathworks_doc_urls": [],
+      "rationale": "Python-only sparse membership helper used by tprod to distinguish explicit entries from implicit zeros.",
+      "evidence": [
+        "Inspected tprod implementation and targeted tests."
+      ],
+      "reviewed_in_round2": true
+    },
+    {
+      "file": "sparsemat.py",
+      "function": "_integer_coordinates",
+      "status": "not_applicable",
+      "category": "python_only:validation_helper",
+      "matlab_source": null,
+      "mathworks_doc_urls": [],
+      "rationale": "Python-only finite integer input validator supporting MATLAB-style coordinate validation.",
+      "evidence": [
+        "Used by SparseMat and CircularSparseMat constructors/read/write paths."
+      ],
+      "reviewed_in_round2": true,
+      "round2_status": "matched",
+      "round2_notes": "Integer and boolean array inputs now use an astype(copy=False) fast path; float inputs retain finite/integral validation. Constructor and circular wrapping callers take defensive copies where they mutate coordinates, so the hot read path avoids redundant validation/allocation for integer coordinates.",
+      "round2_tests": [
+        "tests/test_sparsemat.py::test_coordinate_inputs_reject_fractional_and_nonfinite_indices",
+        "tests/test_circular_sparsemat.py::test_constructor_wraps_without_mutating_input_coordinates"
+      ],
+      "round2_evidence": [
+        "Optimized integer coordinate hot path after review; integer casts avoid isfinite/floor and use copy=False.",
+        "tests/test_sparsemat.py::test_coordinate_inputs_reject_fractional_and_nonfinite_indices",
+        "tests/test_circular_sparsemat.py::test_constructor_wraps_without_mutating_input_coordinates"
+      ]
+    }
+  ]
+}

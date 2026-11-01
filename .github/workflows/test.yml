@@ -1,0 +1,22 @@
+name: Scientific regression tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -c constraints-ubuntu.txt -e '.[validation]'
+      - run: python scripts/prepare_fixtures.py
+      - run: ./scripts/build_glpk.sh
+      - run: python scripts/verify_installation.py
+      - run: python -m pytest -q
+      - run: python scripts/check_release.py

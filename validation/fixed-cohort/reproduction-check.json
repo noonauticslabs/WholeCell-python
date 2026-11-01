@@ -1,0 +1,14 @@
+{
+  "scope": "Fixed-code 12+12 comparison; portable numeric reanalysis matches curated raw-input results exactly",
+  "summary_exact_match": true,
+  "discrimination_exact_match": true,
+  "bias_tests_exact_match": true,
+  "trajectory_npz_sha256": "05a1c6adb1d5bd02c98a9c8c12be63be6f2dc2c38ce450e6ecdb901a672a13a3",
+  "analysis_scripts": {
+    "scripts/analyze_ensemble.py": "d0cde197465a8e2c9f6a581ef5595828a0599a708f006bf09995a59de1c308fd",
+    "scripts/analyze_bias.py": "0e0a2c3fd3f8263892f227881746a366905106523b09285f51d7b658faad9441",
+    "scripts/plot_ensemble.py": "b4a31adaf7e474498fbf680100393b4543392c9ac45cb3d2d2554b89efdf1156"
+  },
+  "plots": "10-panel-set PDF plus separate classifier PNG; overview visually inspected",
+  "runtime_changed": false
+}

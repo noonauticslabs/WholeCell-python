@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.gz binary
+*.npz binary
+*.png binary
+*.mat binary
+LICENSES/* whitespace=-blank-at-eof
+
+*.gif binary
+*.mp4 binary

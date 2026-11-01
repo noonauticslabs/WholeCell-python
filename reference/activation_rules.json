@@ -1,0 +1,58 @@
+{
+  "source": "extracted-data/model_parameters_plain.mat",
+  "sha256": "25ae9001277c13195e96e35b1b8cee674dd99981bfb419aedbbe5c013fbab63e",
+  "field": "fixedConstants.processes.ProteinActivation.activationRules",
+  "rules": [
+    "~stimulus_gluconate",
+    "stimulus_thiolStress",
+    "stimulus_ironStress",
+    "~ciprofloxacin & ~difloxacin & ~sparfloxacin",
+    "G6P>5",
+    "~ciprofloxacin & ~difloxacin & ~sparfloxacin",
+    "temperature>=43",
+    "PI>20",
+    "~gentamicin & ~spectinomycin & ~streptomycin & ~tetracycline",
+    "~azithromycin & ~chloramphenicol & ~clarithromycin & ~clindamycin & ~erythromycin & ~lincomycin & ~pristinamycin"
+  ],
+  "distinct_rules": [
+    "G6P>5",
+    "PI>20",
+    "stimulus_ironStress",
+    "stimulus_thiolStress",
+    "temperature>=43",
+    "~azithromycin & ~chloramphenicol & ~clarithromycin & ~clindamycin & ~erythromycin & ~lincomycin & ~pristinamycin",
+    "~ciprofloxacin & ~difloxacin & ~sparfloxacin",
+    "~gentamicin & ~spectinomycin & ~streptomycin & ~tetracycline",
+    "~stimulus_gluconate"
+  ],
+  "identifiers": [
+    "G6P",
+    "PI",
+    "azithromycin",
+    "chloramphenicol",
+    "ciprofloxacin",
+    "clarithromycin",
+    "clindamycin",
+    "difloxacin",
+    "erythromycin",
+    "gentamicin",
+    "lincomycin",
+    "pristinamycin",
+    "sparfloxacin",
+    "spectinomycin",
+    "stimulus_gluconate",
+    "stimulus_ironStress",
+    "stimulus_thiolStress",
+    "streptomycin",
+    "temperature",
+    "tetracycline"
+  ],
+  "observed_operators": [
+    "~",
+    "&",
+    ">",
+    ">="
+  ],
+  "function_calls": [],
+  "scope": "Only this exported fitted cache. Other cache revisions and database reconstruction can supply different rules."
+}

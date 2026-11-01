@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wholecell-py"
+version = "0.1.0a1"
+description = "Source-faithful Python port of the Karr et al. (2012) Mycoplasma genitalium whole-cell model, with independent full-cell simulations and MATLAB reference validation."
+readme = "README.md"
+authors = [{name = "Noonautics Labs"}]
+
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.urls]
+Repository = "https://github.com/noonauticslabs/WholeCell-python"
+
+[project.optional-dependencies]
+validation = ["pytest>=7", "swiglpk>=5", "matplotlib>=3.8"]
+style = ["black==24.10.0", "flake8>=7"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["wholecell_py*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 79
+target-version = ["py39"]

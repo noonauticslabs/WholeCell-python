@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "Please cite the original Karr et al. model and identify the exact WholeCell Python release or source digest used in your analysis."
+title: "WholeCell-python: a Python port of the Karr Mycoplasma genitalium whole-cell model"
+type: software
+version: 0.1.0a1
+license: MIT
+authors:
+  - name: "Noonautics Labs"
+references:
+  - type: article
+    title: "A Whole-Cell Computational Model Predicts Phenotype from Genotype"
+    authors:
+      - family-names: Karr
+        given-names: Jonathan R.
+      - family-names: Sanghvi
+        given-names: Jayodita C.
+      - family-names: Macklin
+        given-names: Derek N.
+      - family-names: Gutschow
+        given-names: Miriam V.
+      - family-names: Jacobs
+        given-names: Jared M.
+      - family-names: Bolival
+        given-names: Benjamin
+        name-suffix: Jr.
+      - family-names: Assad-Garcia
+        given-names: Nacyra
+      - family-names: Glass
+        given-names: John I.
+      - family-names: Covert
+        given-names: Markus W.
+    journal: Cell
+    volume: 150
+    issue: 2
+    start: 389
+    end: 401
+    year: 2012
+    doi: 10.1016/j.cell.2012.05.044

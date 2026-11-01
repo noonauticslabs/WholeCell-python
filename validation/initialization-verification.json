@@ -1,0 +1,72 @@
+{
+  "source_sha256": "9f3aab3285fa3405133039d2d6c7844f98903b533c3e1af6cf8ac91e0c013d4e",
+  "python": "3.11.16",
+  "numpy": "2.0.2",
+  "solver_sha256": "4ad091199e2e174aacc1e06a8744c51e30f3469cf08b28ab015f3f16bc9e8ce5",
+  "scope": "One cell per mode, initial growth acceptance and one timestep; not distribution or full-cycle validation",
+  "modes": {
+    "multinomial": {
+      "seconds": 12.784003363994998,
+      "initial_counts": {
+        "Rna": 2104.0,
+        "ProteinMonomer": 20994.0,
+        "ProteinComplex": 4729.0
+      },
+      "initialization": {
+        "kind": "fresh cell from MATLAB-fitted constants",
+        "root_seed": 101,
+        "template_sha256": "ea7c06377a527c8c4cdae6a83abe8caf50af344a00acff9395771f9f9e7f2a96",
+        "mode": "multinomial",
+        "attempts": [
+          {
+            "seed": 101,
+            "growth": 2.277423677229924e-05,
+            "relative_error": 0.06456489376427983
+          }
+        ],
+        "validation": "experimental; no MATLAB initialization ensemble validation"
+      },
+      "time_s": 1.0,
+      "growth": 2.277423677229924e-05,
+      "dry_mass_g": 4.087791322410496e-15,
+      "checkpoint_roundtrip": "passed",
+      "finite_nonnegative_counts": "passed"
+    },
+    "expected": {
+      "seconds": 12.253332534004585,
+      "initial_counts": {
+        "Rna": 1946.0,
+        "ProteinMonomer": 20768.0,
+        "ProteinComplex": 4751.0
+      },
+      "initialization": {
+        "kind": "fresh cell from MATLAB-fitted constants",
+        "root_seed": 101,
+        "template_sha256": "ea7c06377a527c8c4cdae6a83abe8caf50af344a00acff9395771f9f9e7f2a96",
+        "mode": "expected",
+        "attempts": [
+          {
+            "seed": 101,
+            "growth": 2.229977350620967e-05,
+            "relative_error": 0.04238645847752396
+          }
+        ],
+        "validation": "experimental; no MATLAB initialization ensemble validation"
+      },
+      "time_s": 1.0,
+      "growth": 2.229977350620967e-05,
+      "dry_mass_g": 4.098913565841039e-15,
+      "checkpoint_roundtrip": "passed",
+      "finite_nonnegative_counts": "passed"
+    }
+  },
+  "targeted_tests": {
+    "passed": 57,
+    "failed": 0,
+    "warnings": 12,
+    "seconds": 43.87,
+    "python": "3.9.6",
+    "numpy": "2.0.2"
+  },
+  "warning": "Ribosome release divides by remaining mRNA count, including zero, as in original source; warning retained."
+}

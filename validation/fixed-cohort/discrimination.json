@@ -1,0 +1,455 @@
+{
+  "scope": "12+12 fixed-cohort cells. Python uses one corrected source throughout from shared MATLAB t60; no mixed-version continuations. Same aggregate features and classifier rules as historical analysis, fixed before evaluating this cohort.",
+  "permutations": 9999,
+  "seed": 20261102,
+  "cv": "Leave one whole cell out; scaling and RBF bandwidth fit on 23 training cells; fixed rules, no hyperparameter search. All folds refit for every balanced label permutation. Null is identical joint distributions/exchangeability. Accuracy has dependent folds; no naive binomial confidence interval.",
+  "classifiers": [
+    {
+      "features": "Cycle averages + division",
+      "method": "Nearest centroid",
+      "accuracy": 0.5,
+      "correct": 12.0,
+      "p_permutation": 0.6926,
+      "null_accuracy_95": [
+        0.08333333333333333,
+        0.7083333333333334
+      ],
+      "predicted_python": [
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "p_family_max_accuracy": 0.9089
+    },
+    {
+      "features": "Cycle averages + division",
+      "method": "RBF similarity",
+      "accuracy": 0.375,
+      "correct": 9.0,
+      "p_permutation": 0.8309,
+      "null_accuracy_95": [
+        0.125,
+        0.75
+      ],
+      "predicted_python": [
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "p_family_max_accuracy": 0.99
+    },
+    {
+      "features": "Division endpoints",
+      "method": "Nearest centroid",
+      "accuracy": 0.5416666666666666,
+      "correct": 13.0,
+      "p_permutation": 0.4829,
+      "null_accuracy_95": [
+        0.16666666666666666,
+        0.75
+      ],
+      "predicted_python": [
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      "p_family_max_accuracy": 0.8331
+    },
+    {
+      "features": "Division endpoints",
+      "method": "RBF similarity",
+      "accuracy": 0.4583333333333333,
+      "correct": 11.0,
+      "p_permutation": 0.7414,
+      "null_accuracy_95": [
+        0.25,
+        0.7083333333333334
+      ],
+      "predicted_python": [
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "p_family_max_accuracy": 0.9568
+    },
+    {
+      "features": "Common-time trajectories",
+      "method": "Nearest centroid",
+      "accuracy": 0.5833333333333334,
+      "correct": 14.0,
+      "p_permutation": 0.4063,
+      "null_accuracy_95": [
+        0.125,
+        0.7083333333333334
+      ],
+      "predicted_python": [
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "p_family_max_accuracy": 0.7083
+    },
+    {
+      "features": "Common-time trajectories",
+      "method": "RBF similarity",
+      "accuracy": 0.4583333333333333,
+      "correct": 11.0,
+      "p_permutation": 0.7146,
+      "null_accuracy_95": [
+        0.16666666666666666,
+        0.75
+      ],
+      "predicted_python": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "p_family_max_accuracy": 0.9568
+    }
+  ],
+  "mean_and_spread": [
+    {
+      "scope": "Cycle average",
+      "metric": "mass",
+      "bias_percent": 0.5316729473003656,
+      "mean_difference_percent_ci90": [
+        -0.655416727864192,
+        1.7414080467099713
+      ],
+      "mean_difference_percent_ci95": [
+        -0.8754202055094459,
+        1.970813848657496
+      ],
+      "variance_ratio": 1.4117594326495566,
+      "variance_ratio_ci95": [
+        0.5640387070919408,
+        4.264981647568915
+      ]
+    },
+    {
+      "scope": "Cycle average",
+      "metric": "growth",
+      "bias_percent": 1.1865415457654072,
+      "mean_difference_percent_ci90": [
+        -3.3933708897637436,
+        5.985883063805974
+      ],
+      "mean_difference_percent_ci95": [
+        -4.243751399642758,
+        6.985927973657146
+      ],
+      "variance_ratio": 1.3072674346175088,
+      "variance_ratio_ci95": [
+        0.46987449711898066,
+        4.498826392822471
+      ]
+    },
+    {
+      "scope": "Cycle average",
+      "metric": "rna",
+      "bias_percent": 0.09766788527476589,
+      "mean_difference_percent_ci90": [
+        -3.329009773504521,
+        3.7322893435098896
+      ],
+      "mean_difference_percent_ci95": [
+        -3.934842983968843,
+        4.410499545604619
+      ],
+      "variance_ratio": 1.9641713809391035,
+      "variance_ratio_ci95": [
+        0.7490448417791926,
+        5.516863857258741
+      ]
+    },
+    {
+      "scope": "Cycle average",
+      "metric": "monomers",
+      "bias_percent": 0.5681305168754758,
+      "mean_difference_percent_ci90": [
+        -0.9593000646070093,
+        2.094519377453604
+      ],
+      "mean_difference_percent_ci95": [
+        -1.2373195755028665,
+        2.3824899296608533
+      ],
+      "variance_ratio": 1.5171270382231723,
+      "variance_ratio_ci95": [
+        0.681993178243042,
+        3.709374676180966
+      ]
+    },
+    {
+      "scope": "Cycle average",
+      "metric": "complexes",
+      "bias_percent": -0.09331306552605723,
+      "mean_difference_percent_ci90": [
+        -1.5110743125118509,
+        1.376348383848217
+      ],
+      "mean_difference_percent_ci95": [
+        -1.778066028010452,
+        1.6532123752933874
+      ],
+      "variance_ratio": 0.8425287701263149,
+      "variance_ratio_ci95": [
+        0.3601816622759549,
+        2.398515975757783
+      ]
+    },
+    {
+      "scope": "Cycle average",
+      "metric": "ploidy",
+      "bias_percent": 0.45468707881697323,
+      "mean_difference_percent_ci90": [
+        -0.5921456565963901,
+        1.5224040212517054
+      ],
+      "mean_difference_percent_ci95": [
+        -0.7912976735589036,
+        1.7241542178554683
+      ],
+      "variance_ratio": 1.3391010066798248,
+      "variance_ratio_ci95": [
+        0.5043107087779565,
+        4.241699942774584
+      ]
+    },
+    {
+      "scope": "At division",
+      "metric": "mass",
+      "bias_percent": -0.12125211178465323,
+      "mean_difference_percent_ci90": [
+        -0.5653519252329015,
+        0.3087644058561267
+      ],
+      "mean_difference_percent_ci95": [
+        -0.651081559392126,
+        0.3919394779053794
+      ],
+      "variance_ratio": 0.9653207843934951,
+      "variance_ratio_ci95": [
+        0.18012007451753057,
+        2.9957913860608127
+      ]
+    },
+    {
+      "scope": "At division",
+      "metric": "growth",
+      "bias_percent": -1.6166883963494194,
+      "mean_difference_percent_ci90": [
+        -5.922234115094811,
+        2.704222372120868
+      ],
+      "mean_difference_percent_ci95": [
+        -6.791908813069362,
+        3.4801072644563558
+      ],
+      "variance_ratio": 1.5255222562290724,
+      "variance_ratio_ci95": [
+        0.33446263182679015,
+        3.6017842577341366
+      ]
+    },
+    {
+      "scope": "At division",
+      "metric": "rna",
+      "bias_percent": -4.307502807665808,
+      "mean_difference_percent_ci90": [
+        -8.362527810632194,
+        -0.0392045862137957
+      ],
+      "mean_difference_percent_ci95": [
+        -9.11048471830155,
+        0.7344013416390778
+      ],
+      "variance_ratio": 1.8785057807199257,
+      "variance_ratio_ci95": [
+        0.5222733847501971,
+        6.027814790883943
+      ]
+    },
+    {
+      "scope": "At division",
+      "metric": "monomers",
+      "bias_percent": -0.46504475459213657,
+      "mean_difference_percent_ci90": [
+        -1.5794046534771156,
+        0.6598162704284586
+      ],
+      "mean_difference_percent_ci95": [
+        -1.7958885640664681,
+        0.8669309548461578
+      ],
+      "variance_ratio": 1.5863327976666337,
+      "variance_ratio_ci95": [
+        0.6347975043962247,
+        4.181286132767728
+      ]
+    },
+    {
+      "scope": "At division",
+      "metric": "complexes",
+      "bias_percent": -1.071035771023543,
+      "mean_difference_percent_ci90": [
+        -2.0096716280307336,
+        -0.14247802165245715
+      ],
+      "mean_difference_percent_ci95": [
+        -2.190315857776725,
+        0.02920006039340172
+      ],
+      "variance_ratio": 0.6267651115852446,
+      "variance_ratio_ci95": [
+        0.1613641814745979,
+        2.0460767590000692
+      ]
+    },
+    {
+      "scope": "Division time",
+      "metric": "division",
+      "bias_percent": -0.7888312788750462,
+      "mean_difference_percent_ci90": [
+        -3.766268061720503,
+        2.2737402142580843
+      ],
+      "mean_difference_percent_ci95": [
+        -4.303244792315092,
+        2.8461552430204815
+      ],
+      "variance_ratio": 1.4993354694357965,
+      "variance_ratio_ci95": [
+        0.5138715055035247,
+        5.519169877604251
+      ]
+    }
+  ],
+  "limits": "Bootstrap intervals exploratory/pointwise, not simultaneous. 90% bounds are equivalence-margin sensitivity, not a prespecified formal equivalence claim. No failure to reject establishes indistinguishability. Inference is conditional on one starting biological state and these aggregate features, not every internal process."
+}

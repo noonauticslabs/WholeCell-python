@@ -1,0 +1,53 @@
+{
+  "starting_inventory_functions": 932,
+  "starting_unique_function_names": 927,
+  "duplicate_property_names": [
+    [
+      "chromosome_sequence.py",
+      "ChromosomeSequence.positive_strand"
+    ],
+    [
+      "randstream.py",
+      "RandStream.state"
+    ],
+    [
+      "states/geometry.py",
+      "Geometry.width"
+    ],
+    [
+      "states/transcript.py",
+      "Transcript.totalBaseCounts"
+    ],
+    [
+      "molecule_count_state.py",
+      "MoleculeCountState.decayRates"
+    ]
+  ],
+  "original_status_counts": {
+    "not_applicable": 156,
+    "matched": 608,
+    "mismatched": 6,
+    "not_verified": 148,
+    "documented_rng_difference": 14
+  },
+  "original_unresolved_remaining": 154,
+  "current_definitions": 1045,
+  "current_unique_function_names": 1040,
+  "added_current_unique_names": 113,
+  "added_status_counts": {
+    "not_verified": 96,
+    "matched": 15,
+    "not_applicable": 2
+  },
+  "source_only_rows": [
+    [
+      "processes/protein_activation.py",
+      "ProteinActivation.transcodeActivationRules"
+    ],
+    [
+      "reaction_process.py",
+      "ReactionProcess helper semantics"
+    ]
+  ],
+  "meaning": "Matched = scoped source review and cited tests, not exhaustive MATLAB equivalence. documented_rng_difference = intentional independent engine, not an algorithm mismatch. New helpers counted separately, never hidden."
+}
