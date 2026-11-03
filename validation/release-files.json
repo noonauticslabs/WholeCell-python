@@ -273,8 +273,8 @@
     },
     {
       "path": "scripts/check_release.py",
-      "sha256": "e1f30125d7a4135c1331a63b4e598eacefd9420576936de31d30256016c0dacb",
-      "bytes": 3344
+      "sha256": "a8398c411d57b23ace92adb276344d28f22e720a3d9baca79c95aa6143a748a2",
+      "bytes": 3958
     },
     {
       "path": "scripts/chromosome_frame.py",
@@ -283,8 +283,8 @@
     },
     {
       "path": "scripts/package_source.py",
-      "sha256": "dd126655d967697b191a3a3e50a2c09e1b8ffa32334b0b3d11e19e4c07655034",
-      "bytes": 2312
+      "sha256": "d602074f4cbc279e5a746890ac71c0e5c6e9b985b3617e311690bd011c17e59b",
+      "bytes": 2672
     },
     {
       "path": "scripts/paper_presentation.py",
@@ -833,8 +833,8 @@
     },
     {
       "path": "validation/fixed-cohort/division_times.csv",
-      "sha256": "c63943a3642407cc5568741faa05f3907ad06977fc92ad90c3c4cb6c1277b97d",
-      "bytes": 944
+      "sha256": "11bbad22e5859649395718b38bfecdb31eeb7bfae6c93bd18db6d96a66fbaa9a",
+      "bytes": 919
     },
     {
       "path": "validation/fixed-cohort/presentation-trajectories.npz",
@@ -863,8 +863,8 @@
     },
     {
       "path": "validation/fixed-cohort/time_matched_statistics.csv",
-      "sha256": "d7df32d9adf31323a366b782d9ccb6053ee20081341bffe4e5a085c8bbc89710",
-      "bytes": 777709
+      "sha256": "3f259de3c8b808a9a08da219dec08d6287414460a7a53015a904864bf5677592",
+      "bytes": 774600
     },
     {
       "path": "validation/fixed-cohort/trajectories.npz",

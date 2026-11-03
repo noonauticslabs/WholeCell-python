@@ -8,6 +8,25 @@ sys.path.insert(0, str(ROOT))
 from wholecell_py.checkpoint import source_digest
 
 
+def release_bytes(path):
+    """Return platform-independent bytes for a checked-in release file.
+
+    Git normalizes text files to LF in the repository, but a checkout with
+    core.autocrlf can expose CRLF in the working tree. Hash the canonical text
+    representation so the same release inventory validates on every OS.
+    Binary files are returned byte-for-byte.
+    """
+    data = path.read_bytes()
+    if b"\0" not in data:
+        try:
+            data.decode("utf-8")
+        except UnicodeDecodeError:
+            pass
+        else:
+            return data.replace(b"\r\n", b"\n")
+    return data
+
+
 def main():
     inventory = ROOT / "validation/release-files.json"
     if inventory.exists():
@@ -16,7 +35,7 @@ def main():
         for entry, p in zip(entries, paths):
             assert p.is_file(), entry["path"]
             assert (
-                hashlib.sha256(p.read_bytes()).hexdigest() == entry["sha256"]
+                hashlib.sha256(release_bytes(p)).hexdigest() == entry["sha256"]
             ), ("Changed release file: " + entry["path"])
     else:
         result = subprocess.run(
@@ -50,7 +69,7 @@ def main():
             ".log",
         }:
             issues.append((str(rel), "private/generated file"))
-        data = p.read_bytes()
+        data = release_bytes(p)
         if p.name.endswith(".json.gz"):
             data = gzip.decompress(data)
         if p.suffix in {

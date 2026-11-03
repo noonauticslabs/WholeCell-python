@@ -7,6 +7,19 @@ ROOT = Path(__file__).resolve().parents[1]
 NAME = "wholecell-py-0.1.0a1"
 
 
+def release_bytes(path):
+    """Read text with stable LF endings while preserving binary artifacts."""
+    data = path.read_bytes()
+    if b"\0" not in data:
+        try:
+            data.decode("utf-8")
+        except UnicodeDecodeError:
+            pass
+        else:
+            return data.replace(b"\r\n", b"\n")
+    return data
+
+
 def main():
     inventory = ROOT / "validation/release-files.json"
     if (ROOT / ".git").exists():
@@ -23,13 +36,13 @@ def main():
     records = [
         dict(
             path=n,
-            sha256=hashlib.sha256((ROOT / n).read_bytes()).hexdigest(),
-            bytes=(ROOT / n).stat().st_size,
+            sha256=hashlib.sha256(release_bytes(ROOT / n)).hexdigest(),
+            bytes=len(release_bytes(ROOT / n)),
         )
         for n in names
     ]
-    inventory.write_text(
-        json.dumps(dict(format_version=1, files=records), indent=2) + "\n"
+    inventory.write_bytes(
+        (json.dumps(dict(format_version=1, files=records), indent=2) + "\n").encode("utf-8")
     )
     subprocess.run(
         [sys.executable, str(ROOT / "scripts/check_release.py")],
@@ -46,7 +59,7 @@ def main():
     ):
         for name in sorted(names + ["validation/release-files.json"]):
             p = ROOT / name
-            data = p.read_bytes()
+            data = release_bytes(p)
             info = tarfile.TarInfo(NAME + "/" + name)
             info.size = len(data)
             info.mode = 0o755 if os.access(p, os.X_OK) else 0o644
